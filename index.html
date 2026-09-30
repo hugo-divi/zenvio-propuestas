@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Propuesta de rediseño de la portada de Consultoría L.A., hecha por Zenvio. No es la web oficial.">
+<meta property="og:title" content="Propuesta de rediseño · Consultoría L.A.">
+<meta property="og:description" content="Demo de portada hecha por Zenvio con el contenido y la marca de Consultoría L.A. No es su web oficial.">
+<meta name="theme-color" content="#123858">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27%3E%3Ccircle cx=%2720%27 cy=%2720%27 r=%2719%27 fill=%27%231D4E77%27/%3E%3Cpath d=%27M29 11c0 10-6 17-15 18 0-10 6-17 15-18z%27 fill=%27%23B3CC28%27/%3E%3C/svg%3E">
+<title>Propuesta Consultoría L.A.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap">
+<style>
+/* Sistema de marca de Consultoría L.A.
+   Azul #123858 · Lima #B3CC28 · Gris #575756 · Fondo #F4F4F4
+   Tipografía Futura PT -> Jost (equivalente geométrico en Google Fonts)
+   Página de un solo tema, como la suya. */
+:root{
+  --navy:#123858; --navy-d:#0C2740; --navy-l:#1D4E77;
+  --lima:#B3CC28; --lima-d:#7E9116; --lima-t:#F2F6DC;
+  --grey:#575756; --grey-l:#8C8C8B;
+  --bg:#F4F4F4; --white:#FFFFFF; --rule:#DFE1DC;
+  --flag:#A8451B;
+  --f:"Jost",Futura,"Century Gothic",system-ui,-apple-system,Segoe UI,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--grey);font-family:var(--f);font-size:17px;line-height:1.6;font-weight:400;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{margin:0;font-family:var(--f);color:var(--navy);font-weight:700;line-height:1.05;letter-spacing:-.015em;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--lima);outline-offset:2px}
+img{max-width:100%}
+.in{max-width:1120px;margin:0 auto;padding-inline:24px}
+.narrow{max-width:760px}
+section{padding-block:clamp(56px,7vw,96px)}
+.eyebrow{font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--lima-d);font-weight:600;margin-bottom:16px}
+.num{font-variant-numeric:tabular-nums}
+
+/* marca de agua */
+#bar{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--flag);color:#fff;
+  font-size:11.5px;letter-spacing:.1em;text-align:center;text-transform:uppercase;font-weight:500;
+  padding:9px 14px;padding-top:calc(9px + env(safe-area-inset-top,0px));line-height:1.6}
+#bar b{font-weight:400;opacity:.85}
+#stamp{position:fixed;inset:0;z-index:150;pointer-events:none;overflow:hidden}
+#stamp span{position:absolute;font-size:12px;letter-spacing:.45em;font-weight:500;
+  color:rgba(168,69,27,.13);white-space:nowrap;transform:rotate(-28deg)}
+body{padding-top:42px}
+
+/* cabecera */
+.top{position:sticky;top:42px;z-index:120;background:var(--navy);color:#fff}
+.top .wrap{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.logo .sym{width:30px;height:30px;flex:0 0 auto}
+.logo .txt{line-height:1.05}
+.logo .txt b{display:block;font-size:19px;font-weight:700;letter-spacing:-.01em;color:#fff}
+.logo .txt span{display:block;font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--lima);font-weight:500;margin-top:2px}
+.top nav{margin-left:auto;display:flex;align-items:center;gap:24px;font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:500}
+.top nav a{color:#D5DEE6;text-decoration:none;padding-block:4px;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.top nav a:hover{color:#fff;border-bottom-color:var(--lima)}
+.top .lang{color:#7E97AC;font-size:12.5px;letter-spacing:.1em}
+.top .lang b{color:#fff;font-weight:600}
+.btn-c{background:var(--lima);color:var(--navy);font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:11px 20px;border-radius:30px;text-decoration:none;transition:transform .18s,box-shadow .18s}
+.btn-c:hover{transform:translateY(-1px);box-shadow:0 6px 18px -8px rgba(18,56,88,.6)}
+@media (max-width:1000px){ .top nav .hide{display:none} }
+
+/* botones */
+.btn{display:inline-block;background:var(--lima);color:var(--navy);font-weight:600;font-size:15px;letter-spacing:.09em;text-transform:uppercase;padding:15px 30px;border-radius:32px;text-decoration:none;border:0;cursor:pointer;font-family:var(--f);transition:transform .18s,box-shadow .18s,background .18s}
+.btn:hover{background:#C2DB35;transform:translateY(-2px);box-shadow:0 10px 26px -12px rgba(18,56,88,.55)}
+.btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.45)}
+.btn.ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn.navy{background:var(--navy);color:#fff}
+.btn.navy:hover{background:var(--navy-l)}
+
+/* héroe */
+.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden;padding-block:clamp(48px,6.5vw,86px) clamp(56px,7.5vw,100px)}
+.hero::after{content:"";position:absolute;right:-14%;top:-24%;width:62%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle at 34% 34%,rgba(179,204,40,.19),rgba(179,204,40,0) 62%);pointer-events:none}
+.hero .grid{display:grid;grid-template-columns:1.04fr .96fr;gap:clamp(32px,5vw,64px);align-items:center;position:relative;z-index:2}
+.hero h1{color:#fff;font-size:clamp(35px,6.3vw,64px);font-weight:700;letter-spacing:-.03em;line-height:1.02}
+.hero h1 em{font-style:normal;color:var(--lima)}
+.hero .claim{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--lima);font-weight:600;margin-bottom:20px}
+.hero .sub{font-size:clamp(17px,2vw,20px);color:#C3D0DB;margin-top:22px;max-width:44ch;font-weight:300}
+.hero .acts{display:flex;gap:13px;flex-wrap:wrap;margin-top:32px}
+.hero .foot{font-size:14px;color:#8CA3B6;margin-top:26px;letter-spacing:.02em}
+
+/* factura */
+.bill{background:var(--white);padding:22px 20px 18px;box-shadow:0 26px 50px -26px rgba(0,0,0,.5);transform:rotate(-1.4deg)}
+.bill .bh{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2.5px solid var(--navy);padding-bottom:9px}
+.bill .bh .t{font-weight:600;font-size:13.5px;color:var(--navy);letter-spacing:.04em;text-transform:uppercase}
+.bill .bh .c{font-size:9.5px;color:var(--grey-l);letter-spacing:.06em}
+.bill .r{display:grid;grid-template-columns:1fr auto;gap:12px;padding:11px 6px;border-bottom:1px solid var(--rule);align-items:baseline}
+.bill .r .d{font-size:13.5px;color:var(--grey);line-height:1.3}
+.bill .r .d small{display:block;font-size:10.5px;color:var(--grey-l);margin-top:3px;letter-spacing:.02em}
+.bill .r .a{font-size:14.5px;color:var(--navy);font-weight:500;font-variant-numeric:tabular-nums;white-space:nowrap}
+.bill .r.hot{position:relative;margin-inline:-6px;padding-inline:12px;border-bottom-color:transparent}
+.bill .r.hot::before{content:"";position:absolute;inset:0;background:var(--lima-t);border-left:3px solid var(--lima);z-index:0;transform:scaleX(0);transform-origin:left;}
+body.anim .bill .r.hot::before{animation:sweep .55s cubic-bezier(.22,.9,.3,1) 1.05s forwards}
+@keyframes sweep{to{transform:scaleX(1)}}
+.bill .r.hot .d,.bill .r.hot .a{position:relative;z-index:1}
+.bill .r.hot .d{font-weight:600;color:var(--navy)}
+.bill .r.hot .a{color:var(--lima-d);font-weight:700}
+.bill .tot{display:grid;grid-template-columns:1fr auto;gap:12px;padding:13px 6px 0;font-weight:700;color:var(--navy);font-size:16px}
+.bill .tot .a{font-variant-numeric:tabular-nums}
+.pin{display:flex;gap:10px;align-items:flex-start;margin-top:18px;color:#C3D0DB;font-size:14px;line-height:1.45}
+.pin .ar{color:var(--lima);font-size:17px;line-height:1.1}
+.pin b{color:#fff;font-weight:600}
+.billnote{font-size:10.5px;color:#7E97AC;text-align:right;margin-top:10px;letter-spacing:.07em;text-transform:uppercase}
+@media (max-width:880px){ .hero .grid{grid-template-columns:1fr} .bill{transform:none} }
+
+/* banda del compromiso */
+.promise{background:var(--lima);color:var(--navy);text-align:center;padding-block:clamp(38px,5vw,58px)}
+.promise p.s{font-size:16px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;opacity:.8}
+.promise h2{font-size:clamp(28px,5.4vw,52px);font-weight:700;letter-spacing:-.025em;margin-top:10px;color:var(--navy)}
+.promise p.q{margin-top:14px;font-size:19px;font-weight:300;color:#264A66}
+
+/* bloques claros */
+h2{font-size:clamp(28px,4.4vw,44px);letter-spacing:-.025em}
+.deck{font-size:clamp(17px,1.9vw,19.5px);color:var(--grey);margin-top:18px;max-width:58ch;font-weight:300}
+.head{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:baseline}
+.head .eyebrow{margin:0;padding-top:9px;white-space:nowrap}
+@media (max-width:760px){ .head{grid-template-columns:1fr;gap:6px} .head .eyebrow{padding-top:0} }
+
+/* servicios */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:36px}
+.svc .i{background:var(--white);padding:26px 24px 28px;transition:background .25s,transform .25s}
+.svc .i:hover{background:var(--lima-t);transform:translateY(-3px)}
+.svc .i .n{font-size:12px;letter-spacing:.2em;color:var(--lima-d);font-weight:600}
+.svc .i h3{font-size:20px;margin-top:12px;letter-spacing:-.02em}
+.svc .i p{font-size:15.5px;margin-top:10px;font-weight:300;line-height:1.55}
+@media (max-width:860px){ .svc{grid-template-columns:1fr} }
+
+/* calculadora */
+.calc{background:var(--white);border-top:5px solid var(--lima);box-shadow:0 22px 46px -30px rgba(18,56,88,.5);margin-top:36px}
+.calc .ch{padding:22px 26px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+.calc .ch h3{font-size:21px}
+.calc .ch span{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey-l);font-weight:500}
+.calc .cb{display:grid;grid-template-columns:1fr 1fr}
+.calc .side{padding:26px}
+.calc .res{padding:26px;background:var(--navy);color:#fff;display:flex;flex-direction:column;justify-content:center}
+.f{margin-bottom:20px}
+.f:last-child{margin-bottom:0}
+.f label{display:block;font-size:14.5px;color:var(--navy);font-weight:600;margin-bottom:8px}
+.f input,.f select{width:100%;font-family:var(--f);font-size:17px;padding:13px 14px;border:1.5px solid var(--rule);background:var(--white);color:var(--navy);border-radius:4px;font-weight:500}
+.f input:focus,.f select:focus{border-color:var(--lima)}
+.res .l{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--lima);font-weight:600}
+.res .v{font-size:clamp(40px,7.4vw,66px);font-weight:700;letter-spacing:-.045em;line-height:.95;color:#fff;margin-top:12px;font-variant-numeric:tabular-nums}
+.res .u{font-size:16px;color:#C3D0DB;margin-top:16px;font-weight:300;max-width:32ch}
+.res .u b{color:var(--lima);font-weight:600}
+.calc .cf{padding:16px 26px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--grey-l);line-height:1.5;font-weight:300}
+@media (max-width:760px){ .calc .cb{grid-template-columns:1fr} }
+
+/* problema */
+.prob{background:var(--navy);color:#fff}
+.prob h2{color:#fff}
+.prob .deck{color:#C3D0DB}
+.prob .box{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,4.5vw,56px);align-items:center;margin-top:34px}
+.prob .quote{border-left:4px solid var(--lima);padding-left:24px}
+.prob .quote p{font-size:clamp(19px,2.6vw,25px);color:#fff;font-weight:300;line-height:1.36}
+.prob .quote p b{font-weight:600;color:var(--lima)}
+@media (max-width:820px){ .prob .box{grid-template-columns:1fr} }
+
+/* colabora */
+.col{background:var(--lima-t);border:1px solid #DCE6B4;padding:clamp(26px,4vw,44px);margin-top:0}
+.col h2{font-size:clamp(25px,3.6vw,38px)}
+.col .pts{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:28px}
+.col .pt h4{font-size:17px;color:var(--navy);font-weight:600}
+.col .pt p{font-size:15px;margin-top:7px;font-weight:300}
+@media (max-width:760px){ .col .pts{grid-template-columns:1fr} }
+
+/* blog */
+.blog{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+.bp{background:var(--white);border:1px solid var(--rule);padding:22px;transition:border-color .2s,transform .2s}
+.bp:hover{border-color:var(--lima);transform:translateY(-3px)}
+.bp .k{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--lima-d);font-weight:600}
+.bp h4{font-size:17.5px;margin-top:10px;line-height:1.24}
+.bp p{font-size:14.5px;margin-top:8px;font-weight:300}
+@media (max-width:820px){ .blog{grid-template-columns:1fr} }
+
+/* contacto */
+.cont{background:var(--white)}
+.cont .box{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,5vw,60px);margin-top:34px}
+.dl dt{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--lima-d);font-weight:600;margin-top:22px}
+.dl dt:first-child{margin-top:0}
+.dl dd{margin:7px 0 0;font-size:17px;color:var(--navy);line-height:1.5}
+.dl dd a{color:var(--navy);text-decoration:none;border-bottom:2px solid var(--lima)}
+.form{background:var(--bg);padding:26px;border:1px solid var(--rule)}
+.form .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form textarea{width:100%;font-family:var(--f);font-size:17px;padding:13px 14px;border:1.5px solid var(--rule);background:var(--white);color:var(--navy);border-radius:4px;min-height:110px;resize:vertical;font-weight:500}
+.form .chk{display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:14px;font-weight:300}
+.form .chk input{margin-top:4px;accent-color:var(--lima);width:17px;height:17px}
+@media (max-width:820px){ .cont .box,.form .two{grid-template-columns:1fr} }
+
+/* pie */
+.foot{background:var(--navy-d);color:#8CA3B6;padding-block:34px 40px;font-size:13.5px}
+.foot .r{display:flex;gap:26px;flex-wrap:wrap;align-items:center}
+.foot a{color:#C3D0DB;text-decoration:none}
+.foot a:hover{color:var(--lima)}
+.foot .legal{margin-left:auto;display:flex;gap:20px;flex-wrap:wrap}
+
+/* asistente */
+#fab{position:fixed;right:18px;bottom:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:160;
+  background:var(--lima);color:var(--navy);border:0;border-radius:32px;padding:14px 22px;font-family:var(--f);
+  font-weight:600;font-size:15px;cursor:pointer;box-shadow:0 12px 30px -10px rgba(18,56,88,.6);letter-spacing:.02em}
+#fab:hover{background:#C2DB35}
+#chat{position:fixed;right:18px;bottom:78px;bottom:calc(78px + env(safe-area-inset-bottom,0px));z-index:161;width:min(360px,calc(100vw - 36px));
+  background:var(--white);border:1px solid var(--rule);box-shadow:0 30px 60px -22px rgba(18,56,88,.55);display:flex;flex-direction:column;max-height:min(70vh,520px)}
+#chat[hidden]{display:none}
+#chat .ch{background:var(--navy);color:#fff;padding:15px 18px;display:flex;align-items:center;gap:10px}
+#chat .ch b{font-size:15.5px;font-weight:600}
+#chat .ch small{display:block;font-size:11.5px;color:var(--lima);letter-spacing:.1em;text-transform:uppercase;margin-top:2px}
+#chat .ch button{margin-left:auto;background:transparent;border:0;color:#C3D0DB;font-size:20px;cursor:pointer;line-height:1;padding:2px 4px}
+#msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:11px}
+.m{max-width:88%;padding:11px 14px;font-size:14.5px;line-height:1.5;border-radius:12px}
+.m.bot{background:var(--bg);color:var(--grey);border-bottom-left-radius:3px;align-self:flex-start}
+.m.bot b{color:var(--navy)}
+.m.me{background:var(--navy);color:#fff;border-bottom-right-radius:3px;align-self:flex-end}
+.chips{display:flex;flex-wrap:wrap;gap:7px;padding:0 16px 14px}
+.chips button{background:var(--white);border:1.5px solid var(--lima);color:var(--navy);font-family:var(--f);font-size:13px;
+  padding:7px 13px;border-radius:20px;cursor:pointer;font-weight:500;transition:background .18s}
+.chips button:hover{background:var(--lima-t)}
+#chat .cf{border-top:1px solid var(--rule);padding:11px;display:flex;gap:8px}
+#chat .cf input{flex:1;font-family:var(--f);font-size:14.5px;padding:10px 12px;border:1.5px solid var(--rule);border-radius:20px;color:var(--navy);min-width:0}
+#chat .cf button{background:var(--lima);border:0;color:var(--navy);font-family:var(--f);font-weight:600;padding:10px 16px;border-radius:20px;cursor:pointer;font-size:14px}
+#chat .demo{font-size:11px;color:var(--grey-l);text-align:center;padding:0 16px 10px;letter-spacing:.04em}
+
+/* nota zenvio */
+.zn{border:1.5px dashed var(--flag);background:#FCF2ED;padding:clamp(24px,3.5vw,38px)}
+.zn .eyebrow{color:var(--flag)}
+.zn h3{font-size:clamp(22px,3vw,29px);color:var(--flag);letter-spacing:-.025em}
+.zn .intro{color:#6B4433;margin-top:14px;max-width:62ch;font-size:17px;font-weight:300}
+.zn h4{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--flag);margin-top:28px;font-weight:600}
+.zn ul{margin:12px 0 0;padding-left:0;list-style:none}
+.zn li{padding:13px 0 13px 24px;position:relative;border-bottom:1px solid #EAD9CF;font-size:16px;line-height:1.5;color:#6B4433;font-weight:300}
+.zn li:last-child{border-bottom:0}
+.zn li::before{content:"";position:absolute;left:0;top:21px;width:11px;height:2px;background:var(--flag)}
+.zn li b{color:#4A2C1C;font-weight:600}
+.zn .sig{font-size:13.5px;color:#9A7360;margin-top:24px;line-height:1.9;letter-spacing:.03em}
+
+/* animaciones: la página está completa sin JS; solo se animan si JS arranca */
+body.anim .rv{opacity:0;transform:translateY(22px)}
+body.anim .rv.on{opacity:1;transform:none;transition:opacity .6s cubic-bezier(.22,.9,.3,1),transform .6s cubic-bezier(.22,.9,.3,1)}
+body.anim .st1{animation:up .6s cubic-bezier(.22,.9,.3,1) both}
+body.anim .st2{animation:up .6s cubic-bezier(.22,.9,.3,1) .09s both}
+body.anim .st3{animation:up .6s cubic-bezier(.22,.9,.3,1) .18s both}
+body.anim .st4{animation:up .6s cubic-bezier(.22,.9,.3,1) .27s both}
+body.anim .st5{animation:up .7s cubic-bezier(.22,.9,.3,1) .36s both}
+@keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  body.anim .rv,body.anim .st1,body.anim .st2,body.anim .st3,body.anim .st4,body.anim .st5{opacity:1;transform:none;animation:none}
+  body.anim .bill .r.hot::before{animation:none;transform:scaleX(1)}
+  *{transition:none !important}
+}
+</style>
+</head>
+<body style="margin:0">
+
+<div id="bar">Propuesta de rediseño · hecha por Zenvio · <b>no es la web oficial de Consultoría L.A.</b></div>
+<div id="stamp" aria-hidden="true"></div>
+
+<header class="top"><div class="wrap">
+  <div class="logo">
+    <svg class="sym" viewBox="0 0 40 40" aria-hidden="true">
+      <circle cx="20" cy="20" r="19" fill="#1D4E77"></circle>
+      <path d="M29 11c0 10-6 17-15 18 0-10 6-17 15-18z" fill="#B3CC28"></path>
+      <path d="M14 29c3-6 7-10 13-12" stroke="#1D4E77" stroke-width="1.4" fill="none" stroke-linecap="round"></path>
+    </svg>
+    <span class="txt"><b>L.a.</b><span>Consultoría energética</span></span>
+  </div>
+  <nav>
+    <a class="hide" href="#conocenos">Quiénes somos</a>
+    <a class="hide" href="#ahorro">¿Quieres ahorrar?</a>
+    <a class="hide" href="#problema">¿Algún problema?</a>
+    <a class="hide" href="#colabora">Colabora</a>
+    <a class="hide" href="#blog">Blog</a>
+    <span class="lang hide"><b>ES</b> | GAL</span>
+    <a class="btn-c" href="#contacto">Contáctanos</a>
+  </nav>
+</div></header>
+
+<section class="hero"><div class="in">
+  <div class="grid">
+    <div>
+      <p class="claim st1">Consultoría energética · A Coruña</p>
+      <h1 class="st2">Pagas luz que no enciendes. <em>Te decimos cuánta.</em></h1>
+      <p class="sub st3">No somos una empresa más, nos gusta pensar que somos especiales. Miramos tu factura, tu potencia y tu tarifa, y te enseñamos por escrito dónde se va el dinero. <strong style="color:#fff;font-weight:600">¡Déjanos demostrártelo!</strong></p>
+      <div class="acts st4">
+        <a class="btn" href="#contacto">¡Ponnos a prueba!</a>
+        <a class="btn ghost" href="#conocenos">Conócenos</a>
+      </div>
+      <p class="foot st4">Empresas · Comunidades · Particulares</p>
+    </div>
+    <div class="st5">
+      <div class="bill">
+        <div class="bh"><span class="t">Factura de electricidad</span><span class="c">CUPS ES00·0000·0000·00·XX</span></div>
+        <div class="r"><span class="d">Energía consumida<small>412 kWh · periodo de 30 días</small></span><span class="a">78,20 €</span></div>
+        <div class="r hot"><span class="d">Potencia contratada<small>6,90 kW · 30 días × 0,231 €</small></span><span class="a">47,80 €</span></div>
+        <div class="r"><span class="d">Alquiler de equipos<small>contador</small></span><span class="a">1,03 €</span></div>
+        <div class="r"><span class="d">Impuestos<small>eléctrico e IVA</small></span><span class="a">31,44 €</span></div>
+        <div class="tot"><span>Total</span><span class="a">158,47 €</span></div>
+      </div>
+      <p class="pin"><span class="ar">↑</span><span>Esos <b>47,80 €</b> se pagan los 365 días del año, enciendas o no. Es la línea que casi nadie mira y donde más dinero suele sobrar.</span></p>
+      <p class="billnote">Factura de ejemplo · importes ilustrativos</p>
+    </div>
+  </div>
+</div></section>
+
+<div class="promise"><div class="in">
+  <p class="s rv">Nos comprometemos a hacerlo</p>
+  <h2 class="rv">Rápido, gratis y sin ningún compromiso</h2>
+  <p class="q rv">¿Qué más se puede pedir?</p>
+</div></div>
+
+<section id="conocenos"><div class="in">
+  <div class="head rv">
+    <span class="eyebrow">Quiénes somos</span>
+    <div>
+      <h2>Una consultoría energética asentada en A Coruña</h2>
+      <p class="deck">En nuestro día a día nos preocupamos de ofrecer a nuestros clientes una mejora en los precios de la energía y un asesoramiento individual. Ni centralitas, ni respuestas de plantilla: cada factura la mira una persona.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="ahorro" style="padding-top:0"><div class="in">
+  <div class="head rv">
+    <span class="eyebrow">¿Quieres ahorrar?</span>
+    <div><h2>Un asesoramiento para todo tipo de empresas, comunidades y particulares</h2></div>
+  </div>
+  <div class="svc rv">
+    <div class="i"><span class="n">01</span><h3>Optimización de potencias</h3><p>Miramos cuánta potencia tienes contratada y cuánta usas de verdad. Casi siempre sobra, y cada kilovatio de más se paga los doce meses.</p></div>
+    <div class="i"><span class="n">02</span><h3>Negociación de precios</h3><p>Comparamos tu tarifa con lo que hay hoy en el mercado y negociamos nosotros con las comercializadoras. Tú no atiendes a ningún comercial.</p></div>
+    <div class="i"><span class="n">03</span><h3>Estudios fotovoltaicos</h3><p>Te decimos si en tu tejado sale a cuenta y en cuántos años se paga. Si no sale, también te lo decimos y te ahorras la inversión.</p></div>
+    <div class="i"><span class="n">04</span><h3>Altas de nuevos suministros</h3><p>Altas, cambios de titularidad y ampliaciones. El papeleo lo hacemos nosotros de principio a fin.</p></div>
+    <div class="i"><span class="n">05</span><h3>Puntos de recarga</h3><p>Instalación y gestión de puntos de recarga para vehículo eléctrico, en empresa o en comunidad.</p></div>
+    <div class="i"><span class="n">06</span><h3>Asesoramiento y gestión gratuita</h3><p>Todo lo anterior empieza igual: mirando tu factura. Y eso no te cuesta nada ni te compromete a nada.</p></div>
+  </div>
+
+  <div class="head rv" style="margin-top:clamp(50px,6vw,84px)">
+    <span class="eyebrow">Tu factura</span>
+    <div>
+      <h2>Cuánto es en tu caso</h2>
+      <p class="deck">Esto no calcula lo que vas a ahorrar — eso solo se sabe mirando tu factura de verdad. Calcula lo que ya te estás gastando, para que decidas si merece la pena que le echemos un ojo.</p>
+    </div>
+  </div>
+
+  <div class="calc rv">
+    <div class="ch"><h3>Lo que pagas hoy</h3><span>Coge tu última factura</span></div>
+    <div class="cb">
+      <div class="side">
+        <div class="f"><label for="g">Importe de la factura</label><input type="number" id="g" min="0" step="10" value="320"></div>
+        <div class="f"><label for="p">Cada cuánto te llega</label><select id="p"><option value="1" selected>Cada mes</option><option value="2">Cada dos meses</option></select></div>
+        <div class="f"><label for="t">Quién eres</label><select id="t"><option value="empresa" selected>Una empresa o un local</option><option value="comunidad">Una comunidad de vecinos</option><option value="particular">Una vivienda</option></select></div>
+      </div>
+      <div class="res">
+        <span class="l">Al año</span>
+        <div class="v num" id="anual">3.840 €</div>
+        <p class="u" id="msg">En los próximos cinco años son <b>19.200 €</b> en el negocio. Mirar si algo de eso sobra no te cuesta nada.</p>
+        <a class="btn" href="#contacto" style="margin-top:24px;align-self:flex-start">¡Ponnos a prueba!</a>
+      </div>
+    </div>
+    <div class="cf">No prometemos un porcentaje de ahorro antes de ver tu factura: depende de tu tarifa, tu potencia contratada y tu consumo. Te lo damos por escrito después de mirarla, nunca antes.</div>
+  </div>
+</div></section>
+
+<section id="problema" class="prob"><div class="in">
+  <div class="head rv">
+    <span class="eyebrow" style="color:var(--lima)">¿Algún problema?</span>
+    <div><h2>¿Tienes líos con tu comercializadora, la distribuidora o el contador?</h2></div>
+  </div>
+  <div class="box">
+    <div class="quote rv">
+      <p>Sabemos que esto ocurre muy a menudo y es un verdadero quebradero de cabeza. Así que te proponemos un plan: <b>¿por qué no inviertes tu tiempo en algo más productivo y nos pasas el marrón a nosotros?</b></p>
+    </div>
+    <div class="rv">
+      <p class="deck" style="color:#C3D0DB">Facturas que no cuadran, lecturas mal hechas, reclamaciones que llevan meses dando vueltas. Nosotros ya conocemos el camino y sabemos con quién hay que hablar.</p>
+      <p style="margin-top:22px"><a class="btn" href="#contacto">Te lo gestionamos gratis</a></p>
+    </div>
+  </div>
+</div></section>
+
+<section id="colabora"><div class="in">
+  <div class="col rv">
+    <span class="eyebrow">Colabora con nosotros</span>
+    <h2>Estás de suerte: queremos seguir creciendo</h2>
+    <p class="deck">Siempre estamos buscando colaboradores para unirse a nuestro equipo. Si te mueves entre empresas o comunidades, esto te encaja.</p>
+    <div class="pts">
+      <div class="pt"><h4>Pagos quincenales</h4><p>Pagamos cuando tenemos que hacerlo. Sin excusas ni calendarios raros.</p></div>
+      <div class="pt"><h4>Te cogemos el teléfono</h4><p>Incluso en fin de semana. No queremos que te sientas solo en ningún momento.</p></div>
+      <div class="pt"><h4>El trabajo sucio, nuestro</h4><p>Tú abres la puerta, nosotros hacemos el estudio, la gestión y el seguimiento.</p></div>
+    </div>
+    <p style="margin-top:28px"><a class="btn navy" href="#contacto">Quiero colaborar</a></p>
+  </div>
+</div></section>
+
+<section id="blog" style="padding-top:0"><div class="in">
+  <div class="head rv">
+    <span class="eyebrow">Blog</span>
+    <div>
+      <h2>Lo que va cambiando en el mercado de la energía</h2>
+      <p class="deck">Peajes, cambios de tarifa, ayudas al autoconsumo. Lo contamos en cristiano y sin tecnicismos.</p>
+      <p style="margin-top:22px"><a class="btn navy" href="https://www.consultoriala.com/noticias/">Ver el blog</a></p>
+    </div>
+  </div>
+</div></section>
+
+<section id="contacto" class="cont"><div class="in">
+  <div class="head rv">
+    <span class="eyebrow">Contacto</span>
+    <div>
+      <h2>¡Estamos para asesorarte!</h2>
+      <p class="deck">Ahora que ya sabes cómo podemos ayudarte, ¿tienes alguna duda? ¿Te interesa saber más sobre cualquiera de las gestiones que hacemos? No lo dudes: hablemos.</p>
+    </div>
+  </div>
+  <div class="box">
+    <dl class="dl rv">
+      <dt>Dirección</dt><dd>C/ Alcalde Electo Carballo, 46 Bj Izq<br>15174 Culleredo (A Coruña)</dd>
+      <dt>Horario de atención</dt><dd>Lunes a jueves: 9:00 – 17:45 h<br>Viernes: 9:00 – 14:00 h</dd>
+      <dt>Email</dt><dd><a href="mailto:oficina@consultoriala.com">oficina@consultoriala.com</a></dd>
+    </dl>
+    <div class="form rv">
+      <h3 style="font-size:20px">Introduce tus datos</h3>
+      <p style="font-size:15px;margin-top:8px;font-weight:300">Déjanos tus datos y el mensaje que quieras hacernos llegar, y nos ponemos en contacto contigo lo antes posible.</p>
+      <div class="two" style="margin-top:20px">
+        <div class="f"><label for="n1">Nombre</label><input type="text" id="n1" placeholder="Tu nombre"></div>
+        <div class="f"><label for="n2">Teléfono</label><input type="text" id="n2" placeholder="600 000 000"></div>
+      </div>
+      <div class="f"><label for="n3">Email</label><input type="text" id="n3" placeholder="tucorreo@empresa.com"></div>
+      <div class="f"><label for="n4">Mensaje</label><textarea id="n4" placeholder="Cuéntanos brevemente tu caso. Si puedes, adjunta luego una foto de tu última factura."></textarea></div>
+      <label class="chk"><input type="checkbox" id="n5"><span>He leído y acepto la <a href="https://www.consultoriala.com/politica-de-privacidad/" style="color:var(--navy)">política de privacidad</a>.</span></label>
+      <p style="margin-top:20px"><button class="btn" type="button" id="send">Enviar</button></p>
+      <p id="sent" style="margin-top:14px;font-size:14px;color:var(--lima-d);font-weight:600" hidden>Demo: en la web real esto enviaría el mensaje a oficina@consultoriala.com.</p>
+    </div>
+  </div>
+</div></section>
+
+<footer class="foot"><div class="in"><div class="r">
+  <span>© Consultoría L.A. · Culleredo (A Coruña)</span>
+  <span class="legal">
+    <a href="https://www.consultoriala.com/politica-de-privacidad/">Política de privacidad</a>
+    <a href="https://www.consultoriala.com/aviso-legal/">Aviso legal</a>
+    <a href="https://www.consultoriala.com/aviso-de-cookies/">Aviso de cookies</a>
+  </span>
+</div></div></footer>
+
+<section><div class="in">
+  <div class="zn">
+    <span class="eyebrow">Nota de Zenvio</span>
+    <h3>Esto es solo la portada, y es una demo</h3>
+    <p class="intro">Está hecha con vuestro sistema de marca —azul #123858, lima #B3CC28 y Jost, que es el equivalente libre de vuestra Futura PT— y con vuestro propio texto reordenado. Faltan las páginas interiores, el blog y la versión en gallego.</p>
+
+    <h4>Lo que le falta para estar terminada</h4>
+    <ul>
+      <li><b>Números reales.</b> Aquí no hay ni un dato de ahorro inventado, y se nota el hueco. Con tres casos vuestros de verdad —«a esta comunidad le bajamos la factura un X»— esta página cambia de categoría.</li>
+      <li><b>Caras.</b> Una foto del equipo y de la oficina de Culleredo. En energía la gente compra a personas, no a logotipos.</li>
+      <li><b>El logo de verdad</b> y las fotos originales: aquí van dibujados a mano para no usar vuestros archivos sin permiso.</li>
+      <li><b>El envío de la factura.</b> Que se pueda subir la foto desde el móvil en dos toques, sin escribir nada.</li>
+      <li><b>El asistente</b> de abajo a la derecha responde con respuestas escritas a mano, no con inteligencia artificial. Conectado a vuestras tarifas y a vuestro correo, sería otra cosa.</li>
+      <li><b>Las páginas interiores, el blog y el gallego</b>, con esta misma línea.</li>
+      <li><b>Comprobar un dato:</b> he escrito que cobráis de las comercializadoras. Es lo habitual en el sector, pero no lo pone en vuestra web. Si no es así, se cambia.</li>
+    </ul>
+    <p class="sig">Zenvio · software y web a medida · A Coruña<br>hola.zenvio@gmail.com</p>
+  </div>
+</div></section>
+
+<button id="fab" type="button" aria-expanded="false">¿Te echamos una mano?</button>
+<div id="chat" hidden role="dialog" aria-label="Asistente">
+  <div class="ch">
+    <div><b>Consultoría L.A.</b><small>Respuesta inmediata</small></div>
+    <button type="button" id="close" aria-label="Cerrar">×</button>
+  </div>
+  <div id="msgs"></div>
+  <div class="chips" id="chips"></div>
+  <div class="cf">
+    <input type="text" id="q" placeholder="Escribe tu pregunta…" aria-label="Tu pregunta">
+    <button type="button" id="ask">Enviar</button>
+  </div>
+  <p class="demo">Asistente de demostración · respuestas escritas a mano</p>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var nf = new Intl.NumberFormat("es-ES");
+  function $(id){ return document.getElementById(id); }
+  var reduce = false;
+  try { reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch(e){}
+
+  /* marca de agua */
+  var st = $("stamp");
+  for (var i = 0; i < 24; i++){
+    var s = document.createElement("span");
+    s.textContent = "PROPUESTA · ZENVIO";
+    s.style.left = ((i * 41) % 118 - 12) + "%";
+    s.style.top = ((i * 27) % 112 - 6) + "%";
+    st.appendChild(s);
+  }
+
+  /* animaciones: solo si hay JS. Sin JS la página se ve entera. */
+  document.body.classList.add("anim");
+  var rv = Array.prototype.slice.call(document.querySelectorAll(".rv"));
+  if (reduce || !("IntersectionObserver" in window)){
+    rv.forEach(function(el){ el.classList.add("on"); });
+  } else {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add("on"); io.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.06 });
+    rv.forEach(function(el){
+      if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add("on");
+      else io.observe(el);
+    });
+  }
+
+  /* calculadora, con conteo */
+  var g = $("g"), p = $("p"), t = $("t"), out = $("anual"), msg = $("msg");
+  var shown = 3840, raf = null;
+  function target(){
+    var v = Math.max(0, Number(g.value) || 0);
+    return (v / (Number(p.value) || 1)) * 12;
+  }
+  function paint(val){ out.textContent = nf.format(Math.round(val)) + " €"; }
+  function run(){
+    var to = target();
+    var quien = t.value === "comunidad" ? "para la comunidad" : t.value === "particular" ? "en casa" : "en el negocio";
+    msg.innerHTML = "En los próximos cinco años son <b>" + nf.format(Math.round(to * 5)) + " €</b> " + quien + ". Mirar si algo de eso sobra no te cuesta nada.";
+    if (reduce){ shown = to; paint(to); return; }
+    if (raf) cancelAnimationFrame(raf);
+    var from = shown, t0 = performance.now(), dur = 420;
+    (function step(now){
+      var k = Math.min(1, (now - t0) / dur);
+      var e = 1 - Math.pow(1 - k, 3);
+      shown = from + (to - from) * e;
+      paint(shown);
+      if (k < 1) raf = requestAnimationFrame(step); else { shown = to; paint(to); }
+    })(t0);
+  }
+  [g, p, t].forEach(function(el){ el.addEventListener("input", run); el.addEventListener("change", run); });
+  paint(3840);
+
+  /* formulario de demostración */
+  $("send").addEventListener("click", function(){ $("sent").hidden = false; });
+
+  /* asistente */
+  var FAQ = [
+    { k:["gratis","gratuito","cuesta","cobr","precio","pagar","coste"],
+      q:"¿De verdad es gratis?",
+      a:"Sí. El estudio de tu factura no te cuesta nada y no te compromete a nada. Nosotros cobramos de la comercializadora cuando te conseguimos una tarifa mejor, no de ti. Y si al mirarlo resulta que ya estás bien, te lo decimos y ahí se acaba." },
+    { k:["tarda","tiempo","cuando","cuánto tardá","plazo","rápido"],
+      q:"¿Cuánto tardáis?",
+      a:"48 horas desde que nos llega tu factura. Te mandamos por escrito qué estás pagando de más y por qué." },
+    { k:["cambiar","compañ","comercializadora","obliga","permanencia"],
+      q:"¿Tengo que cambiar de compañía?",
+      a:"No necesariamente. Muchas veces lo que sobra es potencia contratada y eso se ajusta sin cambiar de comercializadora. Si conviene cambiar, te lo explicamos con números antes de mover nada." },
+    { k:["necesit","document","factura","envi","mandar","aport"],
+      q:"¿Qué necesitáis de mí?",
+      a:"Una foto de tu última factura. Nada más. Ni formularios largos ni datos que tengas que ir buscando." },
+    { k:["comunidad","vecino","president","administrador","finca"],
+      q:"¿Trabajáis con comunidades?",
+      a:"Sí, y es de lo que más hacemos: ascensor, garaje y zonas comunes. Lo que se ahorra se nota directamente en la cuota de todos los vecinos. Suele bastar con que lo traiga el administrador o el presidente." },
+    { k:["donde","dónde","direccion","dirección","oficina","horario","abierto","visit"],
+      q:"¿Dónde estáis y qué horario tenéis?",
+      a:"En C/ Alcalde Electo Carballo, 46 Bj Izq, 15174 Culleredo (A Coruña). De lunes a jueves de 9:00 a 17:45 y los viernes de 9:00 a 14:00." },
+    { k:["placa","fotovolt","solar","autoconsumo","tejado"],
+      q:"¿Hacéis estudios de placas solares?",
+      a:"Sí. Te decimos si en tu tejado sale a cuenta y en cuántos años se paga. Y si no sale, también te lo decimos: te ahorramos la inversión." },
+    { k:["problema","reclama","contador","lectura","distribuidora","error"],
+      q:"Tengo un lío con la compañía",
+      a:"Pásanoslo. Facturas que no cuadran, lecturas mal hechas o reclamaciones atascadas: lo gestionamos nosotros de forma gratuita, que ya conocemos el camino." },
+    { k:["recarga","coche","eléctrico","cargador"],
+      q:"¿Instaláis puntos de recarga?",
+      a:"Sí, para empresa y para comunidad: instalación y gestión completa." },
+    { k:["colabor","comisión","comision","trabajar con vosotros","socio"],
+      q:"Quiero colaborar con vosotros",
+      a:"Genial. Buscamos colaboradores continuamente: pagos quincenales y te cogemos el teléfono incluso en fin de semana. Escríbenos a oficina@consultoriala.com y lo vemos." }
+  ];
+  var msgs = $("msgs"), chips = $("chips"), chat = $("chat"), fab = $("fab"), started = false;
+
+  function add(text, who){
+    var d = document.createElement("div");
+    d.className = "m " + who;
+    d.innerHTML = text;
+    msgs.appendChild(d);
+    msgs.scrollTop = msgs.scrollHeight;
+    return d;
+  }
+  function bot(text){
+    if (reduce){ add(text, "bot"); return; }
+    var d = add("<span style='opacity:.5'>escribiendo…</span>", "bot");
+    setTimeout(function(){ d.innerHTML = text; msgs.scrollTop = msgs.scrollHeight; }, 420);
+  }
+  function suggest(){
+    chips.textContent = "";
+    var pick = [0,1,3,4,5].map(function(i){ return FAQ[i]; });
+    pick.forEach(function(f){
+      var b = document.createElement("button");
+      b.type = "button"; b.textContent = f.q;
+      b.addEventListener("click", function(){ add(f.q, "me"); bot(f.a); });
+      chips.appendChild(b);
+    });
+  }
+  function norm(s){ return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,""); }
+  function answer(text){
+    var n = norm(text), best = null, score = 0;
+    FAQ.forEach(function(f){
+      var s = 0;
+      f.k.forEach(function(k){ if (n.indexOf(norm(k)) !== -1) s++; });
+      if (s > score){ score = s; best = f; }
+    });
+    if (best) bot(best.a);
+    else bot("Eso prefiero que te lo conteste una persona, que es más rápido y no te cuento nada a medias. Escríbenos a <a href='mailto:oficina@consultoriala.com' style='color:#123858;font-weight:600'>oficina@consultoriala.com</a> con tu duda y te respondemos hoy mismo.");
+  }
+  function open(){
+    chat.hidden = false;
+    fab.setAttribute("aria-expanded", "true");
+    if (!started){
+      started = true;
+      bot("¡Hola! Soy el asistente de Consultoría L.A. Puedo resolverte las dudas rápidas sobre el estudio de la factura. ¿Qué quieres saber?");
+      suggest();
+    }
+    setTimeout(function(){ $("q").focus(); }, 60);
+  }
+  fab.addEventListener("click", function(){ if (chat.hidden) open(); else { chat.hidden = true; fab.setAttribute("aria-expanded","false"); } });
+  $("close").addEventListener("click", function(){ chat.hidden = true; fab.setAttribute("aria-expanded","false"); fab.focus(); });
+  function send(){
+    var v = $("q").value.trim();
+    if (!v) return;
+    add(v.replace(/</g,"&lt;"), "me");
+    $("q").value = "";
+    answer(v);
+  }
+  $("ask").addEventListener("click", send);
+  $("q").addEventListener("keydown", function(e){ if (e.key === "Enter") send(); });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape" && !chat.hidden){ chat.hidden = true; fab.setAttribute("aria-expanded","false"); } });
+})();
+</script>
+
+</body>
+</html>
