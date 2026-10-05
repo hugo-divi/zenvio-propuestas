@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Propuesta de rediseño de la portada de OKO Consultoría, hecha por Zenvio. No es la web oficial.">
+<meta property="og:title" content="Propuesta de rediseño · OKO Consultoría">
+<meta property="og:description" content="Demo de portada hecha por Zenvio con el contenido y la marca de OKO Consultoría. No es su web oficial.">
+<meta name="theme-color" content="#009998">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27%3E%3Crect width=%2740%27 height=%2740%27 fill=%27%23009998%27/%3E%3C/svg%3E">
+<title>Propuesta OKO Consultoría</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Rubik:wght@300;400;500;600;700&display=swap">
+<style>
+/* Marca de OKO Consultoría — turquesa #009998, tipografía Rubik (la suya).
+   Caveat solo para una anotación a mano. Un único tema, como su web. */
+:root{
+  --teal:#009998; --teal-d:#00706F; --teal-x:#073F3E; --teal-t:#E3F3F3; --teal-p:#F4FAFA;
+  --ink:#1A1D1C; --ink-2:#3A4241; --grey:#5A6362; --grey-l:#8B9492;
+  --bg:#F6F7F6; --white:#FFFFFF; --rule:#E0E5E4; --rule-d:#C8D0CF;
+  --flag:#A8451B;
+  --f:"Rubik",Helvetica,Arial,system-ui,sans-serif;
+  --hand:"Caveat",cursive;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--grey);font-family:var(--f);font-size:17.5px;line-height:1.6;font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(rgba(26,29,28,.028) 1px,transparent 1px);
+  background-size:22px 22px;
+}
+h1,h2,h3,h4{margin:0;color:var(--ink);font-weight:600;line-height:1.08;letter-spacing:-.022em;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+img{max-width:100%}
+.in{max-width:1140px;margin:0 auto;padding-inline:24px}
+.hand{font-family:var(--hand);font-weight:600}
+
+/* marca de agua */
+#bar{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--flag);color:#fff;
+  font-size:11.5px;letter-spacing:.1em;text-align:center;text-transform:uppercase;font-weight:500;
+  padding:9px 14px;padding-top:calc(9px + env(safe-area-inset-top,0px));line-height:1.6}
+#bar b{font-weight:400;opacity:.85}
+#stamp{position:fixed;inset:0;z-index:150;pointer-events:none;overflow:hidden}
+#stamp span{position:absolute;font-size:12px;letter-spacing:.45em;font-weight:500;
+  color:rgba(168,69,27,.11);white-space:nowrap;transform:rotate(-28deg)}
+body{padding-top:42px}
+
+/* cabecera */
+.top{position:sticky;top:42px;z-index:120;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.top .wrap{max-width:1140px;margin:0 auto;padding:13px 24px;display:flex;align-items:center;gap:20px}
+.logo{display:flex;align-items:center;gap:11px}
+.logo .w{font-size:30px;font-weight:700;letter-spacing:-.045em;line-height:1}
+.logo .w i{font-style:normal}
+.logo .w .a{color:#E2743B}.logo .w .b{color:var(--teal)}.logo .w .c{color:#8CB82B}
+.logo .t{font-size:10.5px;line-height:1.3;color:var(--teal);font-weight:500;border-left:1px solid var(--rule);padding-left:11px}
+.top nav{margin-left:auto;display:flex;align-items:center;gap:26px;font-size:14px;font-weight:500}
+.top nav a{color:var(--ink-2);text-decoration:none;padding-block:4px;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.top nav a:hover{color:var(--teal);border-bottom-color:var(--teal)}
+.btn-c{background:var(--teal);color:#fff;font-weight:500;font-size:13.5px;padding:10px 20px;text-decoration:none;transition:background .2s,transform .18s}
+.btn-c:hover{background:var(--teal-d);transform:translateY(-1px)}
+@media (max-width:980px){ .top nav .hide{display:none} .logo .t{display:none} }
+
+.btn{display:inline-block;background:var(--teal);color:#fff;font-weight:500;font-size:16px;padding:14px 28px;text-decoration:none;border:0;cursor:pointer;font-family:var(--f);transition:background .2s,transform .18s,box-shadow .18s}
+.btn:hover{background:var(--teal-d);transform:translateY(-2px);box-shadow:0 12px 26px -16px rgba(0,153,152,.95)}
+.btn.line{background:transparent;color:var(--teal-d);border:1.5px solid var(--rule-d)}
+.btn.line:hover{background:var(--white);border-color:var(--teal)}
+.btn.w{background:#fff;color:var(--teal-x)}
+.btn.w:hover{background:var(--teal-t)}
+
+/* ---- héroe asimétrico ---- */
+.hero{background:var(--white);padding-block:clamp(44px,5.6vw,76px) clamp(96px,11vw,150px);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;left:-10%;bottom:-40%;width:54%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle at 50% 50%,var(--teal-p),rgba(255,255,255,0) 68%)}
+.hero .g{display:grid;grid-template-columns:1.14fr .86fr;gap:clamp(28px,4vw,56px);align-items:start;position:relative;z-index:2}
+.hero .kick{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);font-weight:600}
+.hero h1{font-size:clamp(36px,6.2vw,66px);font-weight:600;letter-spacing:-.042em;line-height:1.01;margin-top:20px}
+.hero h1 .l2{display:block;color:var(--teal)}
+.hero .lead{font-size:clamp(17.5px,1.95vw,20.5px);color:var(--grey);margin-top:24px;max-width:40ch;font-weight:300}
+.hero .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px;align-items:center}
+.hero .ps{font-size:15px;color:var(--grey-l);margin-top:26px;max-width:38ch;font-weight:300;border-left:2px solid var(--rule-d);padding-left:14px}
+
+/* ficha, rotada y con anotación a mano */
+.cardwrap{position:relative;padding-top:10px}
+.card-f{background:var(--teal-x);color:#D9EAEA;padding:26px 24px 22px;transform:rotate(1.1deg);
+  box-shadow:0 30px 56px -30px rgba(7,63,62,.85),0 2px 0 rgba(0,0,0,.08)}
+.card-f .h{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:11px;gap:10px}
+.card-f .h .t{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#fff;font-weight:500}
+.card-f .h .c{font-size:9.5px;color:#7FA8A7;letter-spacing:.05em;text-align:right}
+.card-f .r{display:grid;grid-template-columns:1fr auto;gap:12px;padding:12px 2px;border-bottom:1px solid rgba(255,255,255,.1);align-items:baseline}
+.card-f .r .d{font-size:14px;line-height:1.3;font-weight:300}
+.card-f .r .d small{display:block;font-size:10.5px;color:#7FA8A7;margin-top:3px}
+.card-f .r .a{font-size:15px;color:#fff;font-weight:500;font-variant-numeric:tabular-nums;white-space:nowrap}
+.card-f .r.hot{position:relative;margin-inline:-10px;padding-inline:12px;border-bottom-color:transparent}
+.card-f .r.hot::before{content:"";position:absolute;inset:0;background:rgba(0,153,152,.45);border-left:3px solid var(--teal);z-index:0;transform:scaleX(0);transform-origin:left}
+body.anim .card-f .r.hot::before{animation:sweep .6s cubic-bezier(.22,.9,.3,1) 1.1s forwards}
+@keyframes sweep{to{transform:scaleX(1)}}
+.card-f .r.hot .d,.card-f .r.hot .a{position:relative;z-index:1}
+.card-f .r.hot .d{font-weight:500;color:#fff}
+.card-f .tot{display:grid;grid-template-columns:1fr auto;gap:12px;padding:14px 2px 0;font-weight:600;color:#fff;font-size:17px}
+.card-f .tot .a{font-variant-numeric:tabular-nums;color:#8FD9D8}
+.annot{position:absolute;right:-6px;bottom:-78px;width:230px;text-align:right;pointer-events:none}
+.annot p{font-family:var(--hand);font-size:21px;color:var(--flag);line-height:1.18;transform:rotate(-3deg)}
+.annot svg{display:block;margin-left:auto;margin-bottom:2px}
+@media (max-width:900px){
+  .hero .g{grid-template-columns:1fr}
+  .card-f{transform:none}
+  .annot{position:static;width:auto;text-align:left;margin-top:16px}
+  .annot svg{display:none}
+  .annot p{transform:none}
+}
+
+/* ---- tira de normas ---- */
+.strip{background:var(--teal-x);color:#8FD9D8;overflow:hidden;padding-block:16px;border-block:1px solid #0B5453}
+.strip .track{display:flex;gap:46px;white-space:nowrap;width:max-content;font-size:14px;letter-spacing:.14em;text-transform:uppercase;font-weight:400}
+body.anim .strip .track{animation:slide 34s linear infinite}
+.strip .track span{opacity:.75}
+.strip .track b{color:#fff;font-weight:500}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---- escenarios: ritmo irregular a propósito ---- */
+.esc{padding-block:clamp(56px,7vw,92px)}
+.esc .lead-in{max-width:30ch;font-size:clamp(25px,3.6vw,38px);font-weight:600;color:var(--ink);letter-spacing:-.03em;line-height:1.1}
+.esc .two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,3.4vw,46px);margin-top:36px;align-items:start}
+.esc .two > div:last-child{padding-top:clamp(0px,4vw,54px)}
+.sc{background:var(--white);border:1px solid var(--rule);padding:28px 26px 30px}
+.sc.alt{background:var(--teal-x);border-color:var(--teal-x);color:#CFE3E2}
+.sc .tag{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);font-weight:600}
+.sc.alt .tag{color:#8FD9D8}
+.sc h3{font-size:clamp(21px,2.5vw,26px);margin-top:12px;font-weight:600;letter-spacing:-.025em;line-height:1.14}
+.sc.alt h3{color:#fff}
+.sc p{margin-top:13px;font-weight:300;font-size:16.5px}
+.sc p + p{margin-top:11px}
+.sc .fix{margin-top:18px;padding-top:16px;border-top:1px solid var(--rule);font-size:15.5px;color:var(--ink-2)}
+.sc.alt .fix{border-top-color:rgba(255,255,255,.18);color:#E3F3F3}
+.sc .fix b{color:var(--teal-d);font-weight:500}
+.sc.alt .fix b{color:#8FD9D8}
+@media (max-width:880px){ .esc .two{grid-template-columns:1fr} .esc .two > div:last-child{padding-top:0} }
+
+/* ---- cita ---- */
+.pull{padding-block:clamp(46px,6vw,78px)}
+.pull blockquote{margin:0;max-width:22ch;font-size:clamp(30px,5.4vw,56px);font-weight:600;color:var(--ink);letter-spacing:-.038em;line-height:1.05}
+.pull blockquote span{color:var(--teal)}
+.pull cite{display:block;font-style:normal;font-size:14px;color:var(--grey-l);margin-top:22px;letter-spacing:.08em;text-transform:uppercase}
+
+/* ---- servicios: dos columnas desiguales ---- */
+.areas{display:grid;grid-template-columns:1.18fr .82fr;gap:0;border:1px solid var(--rule);background:var(--white)}
+.areas .a{padding:clamp(26px,3.2vw,38px)}
+.areas .a:first-child{border-right:1px solid var(--rule)}
+.areas .a.dark{background:var(--teal-p)}
+.areas .k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);font-weight:600}
+.areas h3{font-size:clamp(24px,3vw,31px);margin-top:10px;letter-spacing:-.03em;font-weight:600}
+.areas .d{font-size:16.5px;margin-top:12px;font-weight:300;max-width:46ch}
+.areas h4{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey-l);font-weight:600;margin-top:26px;padding-bottom:7px;border-bottom:1px solid var(--rule)}
+.areas ul{margin:0;padding:0;list-style:none}
+.areas li{padding:9px 0;font-size:16px;color:var(--ink-2);display:grid;grid-template-columns:auto 1fr;gap:11px;align-items:baseline}
+.areas li::before{content:"";width:7px;height:7px;background:var(--teal);border-radius:50%;margin-top:7px}
+.areas li b{font-weight:500;color:var(--ink)}
+.areas li span{color:var(--grey);font-weight:300}
+@media (max-width:880px){ .areas{grid-template-columns:1fr} .areas .a:first-child{border-right:0;border-bottom:1px solid var(--rule)} }
+
+/* ---- calculadora ---- */
+.calc{background:var(--white);border:1px solid var(--rule);border-top:4px solid var(--teal);box-shadow:0 26px 50px -36px rgba(26,29,28,.55);margin-top:30px}
+.calc .ch{padding:22px 26px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+.calc .ch h3{font-size:21px;font-weight:600}
+.calc .ch span{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey-l);font-weight:500}
+.calc .cb{display:grid;grid-template-columns:.95fr 1.05fr}
+.calc .side{padding:26px;border-right:1px solid var(--rule)}
+.calc .res{padding:28px 26px;background:var(--teal-x);color:#D9EAEA;display:flex;flex-direction:column;justify-content:center}
+.f{margin-bottom:20px}
+.f:last-child{margin-bottom:0}
+.f label{display:block;font-size:14.5px;color:var(--ink);font-weight:500;margin-bottom:7px}
+.f label small{display:block;font-weight:300;color:var(--grey-l);font-size:13px;margin-top:3px;line-height:1.4}
+.f input{width:100%;font-family:var(--f);font-size:18px;padding:12px 14px;border:1.5px solid var(--rule);background:var(--white);color:var(--ink);font-weight:500}
+.f input:focus{border-color:var(--teal)}
+.res .l{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:#7FD3D2;font-weight:600}
+.res .v{font-size:clamp(40px,7.2vw,64px);font-weight:600;letter-spacing:-.048em;line-height:.95;color:#fff;margin-top:11px;font-variant-numeric:tabular-nums}
+.res .br{margin-top:20px;border-top:1px solid rgba(255,255,255,.16);padding-top:15px;display:flex;flex-direction:column;gap:10px}
+.res .br div{display:flex;justify-content:space-between;gap:14px;font-size:14.5px;font-weight:300}
+.res .br b{font-weight:500;color:#fff;font-variant-numeric:tabular-nums}
+.calc .cf{padding:17px 26px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--grey-l);line-height:1.6;font-weight:300}
+.calc .cf b{color:var(--ink-2);font-weight:500}
+@media (max-width:760px){ .calc .cb{grid-template-columns:1fr} .calc .side{border-right:0;border-bottom:1px solid var(--rule)} }
+
+/* ---- el dato ---- */
+.tip{display:grid;grid-template-columns:auto 1fr;gap:22px;background:var(--teal-t);padding:28px 30px;margin-top:28px;align-items:start}
+.tip .mk{font-family:var(--hand);font-size:44px;color:var(--teal-d);line-height:.9}
+.tip h3{font-size:21px;font-weight:600}
+.tip p{margin-top:11px;color:var(--ink-2);max-width:60ch;font-weight:300}
+.tip p b{font-weight:500;color:var(--ink)}
+@media (max-width:620px){ .tip{grid-template-columns:1fr;gap:10px} }
+
+/* ---- modalidades, lista desigual ---- */
+.mods{margin-top:30px;border-top:1px solid var(--rule-d)}
+.mods .m{display:grid;grid-template-columns:minmax(150px,19%) 1fr;gap:clamp(16px,3vw,40px);padding:22px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.mods .m h3{font-size:20px;font-weight:600;letter-spacing:-.02em}
+.mods .m p{font-weight:300;font-size:16.5px;max-width:62ch}
+.mods .m:hover h3{color:var(--teal-d)}
+@media (max-width:700px){ .mods .m{grid-template-columns:1fr;gap:5px} }
+
+/* ---- quiénes somos ---- */
+.about{background:var(--white);border:1px solid var(--rule);padding:clamp(28px,4vw,46px)}
+.about .g{display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(22px,3vw,40px);margin-top:28px}
+.about .v .k{font-family:var(--hand);font-size:25px;color:var(--teal);line-height:1}
+.about .v h3{font-size:19px;margin-top:8px;font-weight:600;letter-spacing:-.02em}
+.about .v p{font-size:15.5px;margin-top:10px;font-weight:300}
+@media (max-width:820px){ .about .g{grid-template-columns:1fr} }
+
+/* ---- contacto ---- */
+.cont{background:var(--teal-x);color:#CFE3E2}
+.cont h2{color:#fff}
+.cont .box{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,4.5vw,56px);margin-top:30px}
+.dl dt{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:#7FD3D2;font-weight:600;margin-top:24px}
+.dl dt:first-child{margin-top:0}
+.dl dd{margin:7px 0 0;font-size:17.5px;color:#fff;line-height:1.5;font-weight:300}
+.dl dd a{color:#fff;text-decoration:none;border-bottom:1px solid var(--teal)}
+.soc{display:flex;gap:16px;margin-top:8px}
+.soc a{font-size:14.5px;color:#8FD9D8;text-decoration:none;border-bottom:1px solid rgba(143,217,216,.4);padding-bottom:2px}
+.form{background:rgba(255,255,255,.06);padding:26px;border:1px solid rgba(255,255,255,.14)}
+.form h3{color:#fff;font-size:20px;font-weight:500}
+.form p.i{font-size:15px;margin-top:8px;font-weight:300;color:#A9C6C5}
+.form .two{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.form .f label{color:#CFE3E2}
+.form .f input,.form textarea{background:rgba(255,255,255,.95);border-color:transparent}
+.form textarea{width:100%;font-family:var(--f);font-size:17px;padding:12px 14px;color:var(--ink);min-height:104px;resize:vertical;font-weight:400}
+.form .chk{display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:14px;font-weight:300}
+.form .chk input{margin-top:4px;accent-color:var(--teal);width:17px;height:17px}
+@media (max-width:820px){ .cont .box,.form .two{grid-template-columns:1fr} }
+
+.foot{background:#052E2D;color:#7FA8A7;padding-block:30px 36px;font-size:13px}
+.foot .r{display:flex;gap:22px;flex-wrap:wrap;align-items:center}
+.foot a{color:#B9D4D3;text-decoration:none}
+.foot a:hover{color:#fff}
+.foot .legal{margin-left:auto;display:flex;gap:17px;flex-wrap:wrap}
+
+/* ---- asistente ---- */
+#fab{position:fixed;right:18px;bottom:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:160;
+  background:var(--teal);color:#fff;border:0;padding:14px 22px;font-family:var(--f);font-weight:500;font-size:15px;
+  cursor:pointer;box-shadow:0 14px 32px -12px rgba(0,153,152,.85)}
+#fab:hover{background:var(--teal-d)}
+#chat{position:fixed;right:18px;bottom:78px;bottom:calc(78px + env(safe-area-inset-bottom,0px));z-index:161;width:min(360px,calc(100vw - 36px));
+  background:var(--white);border:1px solid var(--rule);box-shadow:0 30px 60px -22px rgba(26,29,28,.5);display:flex;flex-direction:column;max-height:min(70vh,520px)}
+#chat[hidden]{display:none}
+#chat .ch{background:var(--teal-x);color:#fff;padding:15px 18px;display:flex;align-items:center;gap:10px}
+#chat .ch b{font-size:15.5px;font-weight:500}
+#chat .ch small{display:block;font-size:11px;color:#7FD3D2;letter-spacing:.1em;text-transform:uppercase;margin-top:2px}
+#chat .ch button{margin-left:auto;background:transparent;border:0;color:#9FC4C3;font-size:20px;cursor:pointer;line-height:1;padding:2px 4px}
+#msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:11px}
+.m{max-width:88%;padding:11px 14px;font-size:14.5px;line-height:1.5}
+.m.bot{background:var(--bg);color:var(--ink-2);align-self:flex-start;border:1px solid var(--rule)}
+.m.bot b{color:var(--ink);font-weight:500}
+.m.me{background:var(--teal);color:#fff;align-self:flex-end}
+.chips{display:flex;flex-wrap:wrap;gap:7px;padding:0 16px 14px}
+.chips button{background:var(--white);border:1.5px solid var(--teal);color:var(--teal-d);font-family:var(--f);font-size:13px;
+  padding:7px 12px;cursor:pointer;font-weight:500;transition:background .18s}
+.chips button:hover{background:var(--teal-t)}
+#chat .cf{border-top:1px solid var(--rule);padding:11px;display:flex;gap:8px}
+#chat .cf input{flex:1;font-family:var(--f);font-size:14.5px;padding:10px 12px;border:1.5px solid var(--rule);color:var(--ink);min-width:0}
+#chat .cf button{background:var(--teal);border:0;color:#fff;font-family:var(--f);font-weight:500;padding:10px 16px;cursor:pointer;font-size:14px}
+#chat .demo{font-size:11px;color:var(--grey-l);text-align:center;padding:0 16px 10px}
+
+/* ---- nota zenvio ---- */
+.zn{border:1.5px dashed var(--flag);background:#FCF2ED;padding:clamp(24px,3.5vw,38px)}
+.zn .k{font-family:var(--hand);font-size:26px;color:var(--flag);line-height:1}
+.zn h3{font-size:clamp(22px,3vw,29px);color:var(--flag);letter-spacing:-.028em;font-weight:600;margin-top:6px}
+.zn .intro{color:#6B4433;margin-top:14px;max-width:62ch;font-size:17px;font-weight:300}
+.zn h4{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--flag);margin-top:28px;font-weight:600}
+.zn ul{margin:12px 0 0;padding-left:0;list-style:none}
+.zn li{padding:13px 0 13px 24px;position:relative;border-bottom:1px solid #EAD9CF;font-size:16px;line-height:1.52;color:#6B4433;font-weight:300}
+.zn li:last-child{border-bottom:0}
+.zn li::before{content:"";position:absolute;left:0;top:21px;width:11px;height:2px;background:var(--flag)}
+.zn li b{color:#4A2C1C;font-weight:500}
+.zn .sig{font-size:13.5px;color:#9A7360;margin-top:24px;line-height:1.9}
+
+/* ---- animación ---- */
+body.anim .rv{opacity:0;transform:translateY(20px)}
+body.anim .rv.on{opacity:1;transform:none;transition:opacity .62s cubic-bezier(.22,.9,.3,1),transform .62s cubic-bezier(.22,.9,.3,1)}
+body.anim .st1{animation:up .6s cubic-bezier(.22,.9,.3,1) both}
+body.anim .st2{animation:up .6s cubic-bezier(.22,.9,.3,1) .08s both}
+body.anim .st3{animation:up .6s cubic-bezier(.22,.9,.3,1) .16s both}
+body.anim .st4{animation:up .6s cubic-bezier(.22,.9,.3,1) .24s both}
+body.anim .st5{animation:up .75s cubic-bezier(.22,.9,.3,1) .32s both}
+body.anim .annot{animation:up .7s cubic-bezier(.22,.9,.3,1) 1.5s both}
+@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  body.anim .rv,body.anim [class^="st"],body.anim .annot{opacity:1;transform:none;animation:none}
+  body.anim .card-f .r.hot::before{animation:none;transform:scaleX(1)}
+  body.anim .strip .track{animation:none}
+  *{transition:none !important}
+}
+</style>
+</head>
+<body style="margin:0">
+
+<div id="bar">Propuesta de rediseño · hecha por Zenvio · <b>no es la web oficial de OKO Consultoría</b></div>
+<div id="stamp" aria-hidden="true"></div>
+
+<header class="top"><div class="wrap">
+  <div class="logo">
+    <span class="w"><i class="a">o</i><i class="b">K</i><i class="c">o</i></span>
+    <span class="t">Consultoría<br>de Gestión e Innovación</span>
+  </div>
+  <nav>
+    <a class="hide" href="#servicios">Servicios</a>
+    <a class="hide" href="#deduccion">I+D+i</a>
+    <a class="hide" href="#nosotros">Quiénes somos</a>
+    <a class="hide" href="https://okoconsultoria.com/noticias/">Información</a>
+    <a class="btn-c" href="#contacto">Contáctanos</a>
+  </nav>
+</div></header>
+
+<section class="hero"><div class="in">
+  <div class="g">
+    <div>
+      <p class="kick st1">Consultoría de gestión e innovación · Culleredo</p>
+      <h1 class="st2">Te piden un papel.<span class="l2">Nosotros sabemos cuál y cómo se consigue.</span></h1>
+      <p class="lead st3">Certificamos empresas gallegas en ISO, montamos planes de igualdad y recuperamos las deducciones de I+D+i que casi nadie se aplica. Somos ese apoyo externo que todas las organizaciones acaban necesitando.</p>
+      <div class="acts st4">
+        <a class="btn" href="#contacto">Cuéntanos tu caso</a>
+        <a class="btn line" href="#servicios">Ver qué hacemos</a>
+      </div>
+      <p class="ps st4">Y si después de mirarlo no hay nada que hacer, también te lo decimos. Eso también es parte del trabajo.</p>
+    </div>
+    <div class="cardwrap st5">
+      <div class="card-f">
+        <div class="h"><span class="t">Deducción I+D+i</span><span class="c">Art. 35 · Ley del<br>Impuesto sobre Sociedades</span></div>
+        <div class="r"><span class="d">Gasto en I+D del ejercicio<small>proyectos calificados</small></span><span class="a">80.000 €</span></div>
+        <div class="r hot"><span class="d">Deducción base del 25 %<small>directa sobre la cuota íntegra</small></span><span class="a">20.000 €</span></div>
+        <div class="r"><span class="d">17 % extra por personal investigador<small>dedicación exclusiva</small></span><span class="a">8.500 €</span></div>
+        <div class="r"><span class="d">Bonificación en Seguridad Social<small>40 % de la cuota empresarial</small></span><span class="a">4.720 €</span></div>
+        <div class="tot"><span>Recuperable</span><span class="a">33.220 €</span></div>
+      </div>
+      <div class="annot">
+        <svg width="92" height="52" viewBox="0 0 92 52" fill="none" aria-hidden="true">
+          <path d="M88 48C70 44 44 36 28 22 22 16 18 10 16 4" stroke="#A8451B" stroke-width="2" stroke-linecap="round"/>
+          <path d="M16 4l9 9M16 4L6 9" stroke="#A8451B" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <p>y esto no es una ayuda<br>que haya que pedir:<br>ya te corresponde</p>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<div class="strip" aria-label="Normas con las que trabajamos"><div class="track">
+  <span><b>ISO 9001</b> Calidad</span><span><b>ISO 14001</b> Medioambiente</span><span><b>ISO 45001</b> Seguridad y salud</span><span><b>EMAS</b></span><span><b>PEFC</b> · <b>FSC</b> Cadena de custodia</span><span><b>UNE 166001</b> Proyectos I+D+i</span><span><b>UNE 166002</b> Gestión de la I+D+i</span><span><b>Planes de igualdad</b></span><span><b>ODS</b></span>
+  <span><b>ISO 9001</b> Calidad</span><span><b>ISO 14001</b> Medioambiente</span><span><b>ISO 45001</b> Seguridad y salud</span><span><b>EMAS</b></span><span><b>PEFC</b> · <b>FSC</b> Cadena de custodia</span><span><b>UNE 166001</b> Proyectos I+D+i</span><span><b>UNE 166002</b> Gestión de la I+D+i</span><span><b>Planes de igualdad</b></span><span><b>ODS</b></span>
+</div></div>
+
+<section class="esc"><div class="in">
+  <p class="lead-in rv">Casi todo el mundo llega aquí por una de estas dos puertas.</p>
+  <div class="two">
+    <div class="rv">
+      <div class="sc">
+        <span class="tag">La primera</span>
+        <h3>«Nos piden la ISO 9001 y el plazo se nos echa encima»</h3>
+        <p>Llega el pliego, o el cliente grande que os audita, y resulta que hay que tener un certificado vigente. Nadie en la empresa ha montado un sistema de gestión nunca y la fecha no se mueve.</p>
+        <p>Pasa constantemente. Y casi siempre se llega a tiempo si se empieza por el sitio correcto en vez de por rellenar plantillas.</p>
+        <div class="fix"><b>Qué hacemos:</b> diagnóstico de dónde estáis, montamos el sistema con vuestra gente y os acompañamos hasta la auditoría de certificación.</div>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="sc alt">
+        <span class="tag">La segunda</span>
+        <h3>«Llevamos años desarrollando y nunca nos hemos deducido nada»</h3>
+        <p>Si mejoráis producto, cambiáis procesos o escribís software propio, probablemente estéis haciendo I+D sin llamarlo así. Y la deducción se pierde si nadie la documenta en su ejercicio.</p>
+        <div class="fix"><b>Qué hacemos:</b> identificamos los proyectos, los documentamos y tramitamos el informe motivado del Ministerio, que es lo que deja la deducción fuera de discusión.</div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="pull"><div class="in">
+  <blockquote class="rv">Huimos de los servicios <span>generalistas.</span></blockquote>
+  <cite class="rv">Un cliente es único, tiene necesidades propias, y le prestamos un servicio adaptado a ellas</cite>
+</div></section>
+
+<section id="servicios" style="padding-block:0 clamp(56px,7vw,92px)"><div class="in">
+  <div class="areas rv">
+    <div class="a">
+      <span class="k">Gestión y sostenibilidad</span>
+      <h3>Las certificaciones que cada vez os piden más</h3>
+      <p class="d">En los pliegos públicos, en las auditorías de clientes grandes y en las licitaciones. Se pueden llevar por separado o integradas en un solo sistema, que sale bastante más barato de mantener.</p>
+      <h4>Calidad</h4>
+      <ul>
+        <li><b>ISO 9001</b> <span>· Gestión de la Calidad</span></li>
+        <li><span>Normativa sectorial: transporte, alimentación y otras</span></li>
+      </ul>
+      <h4>Medioambiente</h4>
+      <ul>
+        <li><b>ISO 14001</b> <span>· Gestión Medioambiental</span></li>
+        <li><b>Reglamento EMAS</b></li>
+        <li><b>PEFC</b> y <b>FSC</b> <span>· Cadena de custodia</span></li>
+        <li><span>Informes medioambientales</span></li>
+      </ul>
+      <h4>Social</h4>
+      <ul>
+        <li><b>ISO 45001</b> <span>· Seguridad y Salud en el Trabajo</span></li>
+        <li><b>Planes de Igualdad</b> <span>y protocolos de acoso</span></li>
+        <li><span>Alineación con los <b>ODS</b></span></li>
+      </ul>
+    </div>
+    <div class="a dark">
+      <span class="k">Innovación</span>
+      <h3>La parte que casi nadie aprovecha</h3>
+      <p class="d">Aquí no se trata de pedir nada: se trata de documentar bien lo que ya hacéis para que Hacienda no lo discuta.</p>
+      <h4>Incentivos fiscales</h4>
+      <ul>
+        <li><b>Planificación fiscal de I+D+i</b></li>
+        <li><b>Informes motivados</b> <span>ante el Ministerio</span></li>
+        <li><b>Bonificaciones a la Seguridad Social</b> <span>de personal investigador</span></li>
+      </ul>
+      <h4>Certificación de proyectos</h4>
+      <ul>
+        <li><b>UNE 166001</b> <span>· Proyectos de I+D+i</span></li>
+        <li><b>UNE 166002</b> <span>· Sistemas de gestión de la I+D+i</span></li>
+        <li><span>Identificación de proyectos dentro de vuestra actividad</span></li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section id="deduccion" style="padding-block:0 clamp(56px,7vw,92px)"><div class="in">
+  <p class="lead-in rv" style="max-width:26ch">Échale números antes de llamarnos.</p>
+  <div class="calc rv">
+    <div class="ch"><h3>Lo que podrías estar recuperando</h3><span>Tipos del artículo 35 LIS</span></div>
+    <div class="cb">
+      <div class="side">
+        <div class="f"><label for="gi">Gasto anual en I+D<small>sueldos del equipo técnico, materiales, colaboraciones con universidades o centros</small></label><input type="number" id="gi" min="0" step="5000" value="80000"></div>
+        <div class="f"><label for="pi">De eso, personal dedicado solo a I+D<small>gente que no hace otra cosa</small></label><input type="number" id="pi" min="0" step="5000" value="50000"></div>
+      </div>
+      <div class="res">
+        <span class="l">Al año, orientativo</span>
+        <div class="v" id="tot">33.220 €</div>
+        <div class="br">
+          <div><span>Deducción base, 25 %</span><b id="d1">20.000 €</b></div>
+          <div><span>Extra por personal, 17 %</span><b id="d2">8.500 €</b></div>
+          <div><span>Bonificación Seguridad Social</span><b id="d3">4.720 €</b></div>
+        </div>
+        <a class="btn w" href="#contacto" style="margin-top:24px;align-self:flex-start">Que lo miremos de verdad</a>
+      </div>
+    </div>
+    <div class="cf">Tipos vigentes del artículo 35 de la Ley del Impuesto sobre Sociedades: 25 % sobre el gasto en I+D, 42 % sobre el exceso respecto a la media de los dos ejercicios anteriores, 17 % adicional por personal investigador en exclusiva y 12 % para innovación tecnológica. La bonificación se calcula al 40 % de la cuota empresarial por contingencias comunes, estimada en el 23,6 % del salario. <b>La cifra real depende de cómo se califiquen los proyectos y del informe motivado — y eso es justamente nuestro trabajo.</b></div>
+  </div>
+
+  <div class="tip rv">
+    <span class="mk">ojo</span>
+    <div>
+      <h3>El detalle que le cuesta dinero a mucha gente</h3>
+      <p>La deducción fiscal y la bonificación de Seguridad Social <b>son compatibles</b>, pero para aplicar las dos sobre <b>el mismo trabajador</b> hace falta tener el sello de <b>Pyme Innovadora</b>. Sin él se pueden usar las dos, pero nunca sobre la misma persona. Es la diferencia entre recuperar treinta mil euros y recuperar diez, y es de lo primero que miramos cuando entramos.</p>
+    </div>
+  </div>
+</div></section>
+
+<section style="padding-block:0 clamp(56px,7vw,92px)"><div class="in">
+  <p class="lead-in rv" style="max-width:24ch">Se puede entrar de cuatro maneras.</p>
+  <div class="mods rv">
+    <div class="m"><h3>Diagnóstico</h3><p>Venimos, miramos cómo trabajáis y os decimos qué falta de verdad para llegar donde queréis llegar. Es por donde empieza casi todo el mundo, y a veces termina aquí porque no hacía falta más.</p></div>
+    <div class="m"><h3>Auditoría</h3><p>Revisamos el sistema antes de que venga la entidad certificadora. Para que el día de la auditoría no haya sorpresas.</p></div>
+    <div class="m"><h3>Outsourcing</h3><p>Nos hacemos cargo del sistema de gestión entero y lo mantenemos al día. Es como tener el departamento sin tener que montarlo ni contratar a nadie.</p></div>
+    <div class="m"><h3>Requisitos legales</h3><p>Identificación y actualización de la normativa que os aplica. Cambia más de lo que parece y nadie se entera hasta que llega una inspección.</p></div>
+  </div>
+</div></section>
+
+<section id="nosotros" style="padding-block:0 clamp(56px,7vw,92px)"><div class="in">
+  <div class="about rv">
+    <h2 style="font-size:clamp(25px,3.4vw,36px);letter-spacing:-.03em">Un equipo multidisciplinar, con distintas capacidades y niveles de experiencia</h2>
+    <p style="margin-top:14px;font-weight:300;font-size:18px;max-width:50ch">Y una ambición común: aportar valor a nuestros clientes.</p>
+    <div class="g">
+      <div class="v"><span class="k">objetivo</span><h3>Diligencia y plazo</h3><p>Ayudar al objetivo del cliente cuando nos contrata, y establecer un vínculo de confianza que tenga como pilar el histórico del asesoramiento prestado.</p></div>
+      <div class="v"><span class="k">misión</span><h3>Mejora constante y honradez</h3><p>Honradez en la ejecución del trabajo, fidelidad al cliente y ganas de estar continuamente aprendiendo.</p></div>
+      <div class="v"><span class="k">valor añadido</span><h3>Servicios únicos</h3><p>Huimos de los servicios generalistas. Un cliente es único, tiene necesidades propias, y le prestamos un servicio adaptado a ellas.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="contacto" class="cont"><div class="in">
+  <h2 style="font-size:clamp(28px,4.4vw,44px);letter-spacing:-.03em">Cuéntanos qué te están pidiendo</h2>
+  <p style="margin-top:16px;font-weight:300;font-size:18.5px;max-width:48ch;color:#A9C6C5">Con quince minutos de llamada solemos saber si hay algo que hacer. Si no lo hay, te lo decimos y no te hacemos perder más tiempo.</p>
+  <div class="box">
+    <dl class="dl rv">
+      <dt>Dónde estamos</dt><dd><a href="https://goo.gl/maps/yMj12vvzhGF9mXn27">Anxo Senra 25, Oficinas Local 4<br>15670 Culleredo (A Coruña)</a></dd>
+      <dt>Teléfono</dt><dd><a href="tel:+34981909445">981 909 445</a></dd>
+      <dt>Email</dt><dd><a href="mailto:administracion@okoconsultoria.net">administracion@okoconsultoria.net</a></dd>
+      <dt>También aquí</dt><dd><span class="soc"><a href="https://www.linkedin.com/company/oko-consultor%C3%ADa-de-gesti%C3%B3n-e-innovaci%C3%B3n-s.l./about/">LinkedIn</a><a href="https://twitter.com/consultoria_oko">X / Twitter</a></span></dd>
+    </dl>
+    <div class="form rv">
+      <h3>Escríbenos</h3>
+      <p class="i">Dinos qué certificación os piden o qué desarrolláis, y te contamos si hay recorrido.</p>
+      <div class="two" style="margin-top:20px">
+        <div class="f"><label for="n1">Nombre</label><input type="text" id="n1" placeholder="Tu nombre"></div>
+        <div class="f"><label for="n2">Empresa</label><input type="text" id="n2" placeholder="Nombre de la empresa"></div>
+      </div>
+      <div class="two">
+        <div class="f"><label for="n3">Email</label><input type="text" id="n3" placeholder="tucorreo@empresa.com"></div>
+        <div class="f"><label for="n6">Teléfono</label><input type="text" id="n6" placeholder="981 000 000"></div>
+      </div>
+      <div class="f"><label for="n4">Mensaje</label><textarea id="n4" placeholder="Nos piden la ISO 9001 para una licitación que cierra en octubre… / Desarrollamos producto propio y nunca nos hemos deducido nada…"></textarea></div>
+      <label class="chk"><input type="checkbox" id="n5"><span>He leído y acepto la <a href="https://okoconsultoria.com/politica-privacidad/" style="color:#8FD9D8">política de privacidad</a>.</span></label>
+      <p style="margin-top:20px"><button class="btn w" type="button" id="send">Enviar</button></p>
+      <p id="sent" style="margin-top:14px;font-size:14px;color:#8FD9D8;font-weight:500" hidden>Demo: en la web real esto llegaría a administracion@okoconsultoria.net.</p>
+    </div>
+  </div>
+</div></section>
+
+<footer class="foot"><div class="in"><div class="r">
+  <span>© OKO Consultoría de Gestión e Innovación S.L. · Culleredo (A Coruña)</span>
+  <span class="legal">
+    <a href="https://okoconsultoria.com/aviso-legal/">Aviso legal</a>
+    <a href="https://okoconsultoria.com/politica-privacidad/">Privacidad</a>
+    <a href="https://okoconsultoria.com/politica-de-cookies/">Cookies</a>
+    <a href="https://okoconsultoria.com/clausula-adicional-de-proteccion-de-datos/">Cláusula adicional</a>
+    <a href="https://okoconsultoria.com/accesibilidad/">Accesibilidad</a>
+  </span>
+</div></div></footer>
+
+<section><div class="in">
+  <div class="zn">
+    <span class="k">una nota</span>
+    <h3>Esto es solo la portada, y es una demo</h3>
+    <p class="intro">Hecha con vuestro turquesa, vuestra Rubik y vuestro propio contenido —el de la web y el de la página de servicios—, reordenado. El cambio de fondo es uno: en vuestra portada lo primero que se lee es quiénes sois, y aquí lo primero que se lee es lo que el cliente se lleva.</p>
+
+    <h4>Lo que le falta para estar terminada</h4>
+    <ul>
+      <li><b>Casos reales.</b> No hay ni un dato vuestro y es lo que más peso le daría: «a esta empresa le recuperamos X», «certificamos a Y en N meses». Con tres, esta página cambia de categoría.</li>
+      <li><b>Caras y logotipos.</b> El equipo, la oficina de Culleredo y los clientes que os dejen nombrar. En consultoría se compra a personas.</li>
+      <li><b>El logo de verdad.</b> El «oKo» de arriba está recompuesto con tipografía para no usar vuestro archivo sin permiso, y los colores de las letras son aproximados.</li>
+      <li><b>El caso de la ficha.</b> Los porcentajes son los reales del artículo 35, pero el ejemplo de 80.000 € me lo he inventado yo. Con uno vuestro sería mucho más potente.</li>
+      <li><b>La sección de Información.</b> Tiene una sola entrada y es de enero de 2020. O se retoma o se quita del menú: un blog parado juega en contra.</li>
+      <li><b>El asistente</b> de abajo responde con respuestas escritas a mano, no con inteligencia artificial. Conectado a vuestros servicios y a vuestro correo, ya sería otra cosa.</li>
+      <li><b>Las páginas interiores</b>, con esta misma línea.</li>
+    </ul>
+    <p class="sig">Zenvio · software y web a medida · A Coruña<br>hola.zenvio@gmail.com</p>
+  </div>
+</div></section>
+
+<button id="fab" type="button" aria-expanded="false">¿Te echamos una mano?</button>
+<div id="chat" hidden role="dialog" aria-label="Asistente">
+  <div class="ch">
+    <div><b>OKO Consultoría</b><small>Respuesta inmediata</small></div>
+    <button type="button" id="close" aria-label="Cerrar">×</button>
+  </div>
+  <div id="msgs"></div>
+  <div class="chips" id="chips"></div>
+  <div class="cf">
+    <input type="text" id="q" placeholder="Escribe tu pregunta…" aria-label="Tu pregunta">
+    <button type="button" id="ask">Enviar</button>
+  </div>
+  <p class="demo">Asistente de demostración · respuestas escritas a mano</p>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var nf = new Intl.NumberFormat("es-ES");
+  function $(id){ return document.getElementById(id); }
+  var reduce = false;
+  try { reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch(e){}
+
+  var st = $("stamp");
+  for (var i = 0; i < 24; i++){
+    var s = document.createElement("span");
+    s.textContent = "PROPUESTA · ZENVIO";
+    s.style.left = ((i * 41) % 118 - 12) + "%";
+    s.style.top = ((i * 27) % 112 - 6) + "%";
+    st.appendChild(s);
+  }
+
+  document.body.classList.add("anim");
+  var rv = Array.prototype.slice.call(document.querySelectorAll(".rv"));
+  if (reduce || !("IntersectionObserver" in window)){
+    rv.forEach(function(el){ el.classList.add("on"); });
+  } else {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add("on"); io.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+    rv.forEach(function(el){
+      if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add("on");
+      else io.observe(el);
+    });
+  }
+
+  var gi = $("gi"), pi = $("pi"), shown = 33220, raf = null;
+  var SS_CUOTA = 0.236, SS_BONIF = 0.40;
+  function parts(){
+    var g = Math.max(0, Number(gi.value) || 0);
+    var p = Math.min(Math.max(0, Number(pi.value) || 0), g);
+    var d1 = g * 0.25, d2 = p * 0.17, d3 = p * SS_CUOTA * SS_BONIF;
+    return { d1:d1, d2:d2, d3:d3, t:d1 + d2 + d3 };
+  }
+  function paint(v){ $("tot").textContent = nf.format(Math.round(v)) + " €"; }
+  function run(){
+    var r = parts();
+    $("d1").textContent = nf.format(Math.round(r.d1)) + " €";
+    $("d2").textContent = nf.format(Math.round(r.d2)) + " €";
+    $("d3").textContent = nf.format(Math.round(r.d3)) + " €";
+    if (reduce){ shown = r.t; paint(r.t); return; }
+    if (raf) cancelAnimationFrame(raf);
+    var from = shown, to = r.t, t0 = performance.now(), dur = 420;
+    (function step(now){
+      var k = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      shown = from + (to - from) * e;
+      paint(shown);
+      if (k < 1) raf = requestAnimationFrame(step); else { shown = to; paint(to); }
+    })(t0);
+  }
+  [gi, pi].forEach(function(el){ el.addEventListener("input", run); });
+  paint(33220);
+
+  $("send").addEventListener("click", function(){ $("sent").hidden = false; });
+
+  var FAQ = [
+    { k:["iso 9001","calidad","9001"], q:"Nos piden la ISO 9001",
+      a:"Es la más habitual, y casi siempre llega por un pliego o por un cliente grande que os audita. Empezamos viendo dónde estáis, montamos el sistema con vuestra gente y os acompañamos hasta la auditoría de certificación. Si tenéis fecha límite, decídnosla y vamos hacia atrás desde ahí." },
+    { k:["14001","medioambient","emas","ambiental","pefc","fsc"], q:"ISO 14001, EMAS, PEFC/FSC",
+      a:"Las llevamos todas: ISO 14001, Reglamento EMAS, cadena de custodia PEFC y FSC, e informes medioambientales. Si ya tenéis la 9001, integrarlas sale bastante más barato que llevarlas por separado." },
+    { k:["igualdad","plan de igualdad","acoso","protocolo","ods"], q:"¿Hacéis planes de igualdad?",
+      a:"Sí, y también protocolos de acoso y alineación con los ODS. El plan de igualdad es obligatorio a partir de cierta plantilla y hay que registrarlo. Si no sabéis si os aplica, preguntadnos: eso se responde en cinco minutos y no cuesta nada." },
+    { k:["45001","seguridad y salud","prl","riesgos"], q:"ISO 45001",
+      a:"Seguridad y salud en el trabajo. Va dentro del área social, junto con igualdad y acoso, y se puede integrar con la 9001 y la 14001 en un único sistema." },
+    { k:["i+d","idi","deduc","deducción","deduccion","innova","fiscal","hacienda","sociedades"], q:"¿Qué es eso de deducir la I+D?",
+      a:"Si mejoráis producto, cambiáis procesos o escribís software propio, probablemente estéis haciendo I+D sin llamarlo así. La ley permite deducir un 25 % de ese gasto de la cuota del Impuesto sobre Sociedades, un 17 % extra por personal dedicado en exclusiva y un 12 % en innovación tecnológica. Nosotros identificamos los proyectos, los documentamos y tramitamos el informe motivado." },
+    { k:["informe motivado","motivado","ministerio"], q:"¿Y el informe motivado?",
+      a:"Es el documento del Ministerio que da seguridad jurídica a la deducción: con él, Hacienda no puede discutir la calificación del proyecto. Lo tramitamos nosotros de principio a fin." },
+    { k:["bonificaci","seguridad social","investigador","cotiza","pyme innovadora","sello"], q:"Bonificaciones de personal investigador",
+      a:"Un 40 % de bonificación en la cuota empresarial por contingencias comunes del personal dedicado en exclusiva a I+D+i, que sube hasta el 50 % en algunos casos. Un detalle importante: para aplicarla junto con la deducción fiscal sobre el mismo trabajador hace falta el sello de Pyme Innovadora." },
+    { k:["166001","166002","une","certificar proyecto"], q:"UNE 166001 y 166002",
+      a:"La 166001 certifica un proyecto concreto de I+D+i y la 166002 el sistema de gestión de la innovación. Las dos sostienen las deducciones y además puntúan en licitaciones y convocatorias públicas." },
+    { k:["precio","cuesta","cuánto","cuanto","honorario","tarifa","presupuesto"], q:"¿Cuánto cuesta?",
+      a:"Depende del alcance y del tamaño de la empresa, así que prefiero no soltarte una cifra al aire. Lo que sí se puede hacer es un diagnóstico inicial para ver qué hay que hacer de verdad. Llámanos al 981 909 445 y lo vemos." },
+    { k:["donde","dónde","direccion","dirección","oficina","culleredo","visit","horario"], q:"¿Dónde estáis?",
+      a:"En Anxo Senra 25, Oficinas Local 4, 15670 Culleredo (A Coruña). Por teléfono, en el 981 909 445." },
+    { k:["outsourcing","externaliz","llevar el sistema","mantener","gestionar"], q:"¿Podéis llevarlo vosotros todo?",
+      a:"Sí, es lo que llamamos outsourcing: nos hacemos cargo del sistema de gestión completo y de mantenerlo al día, incluidos los requisitos legales. Como tener el departamento sin tener que montarlo." }
+  ];
+  var msgs = $("msgs"), chips = $("chips"), chat = $("chat"), fab = $("fab"), started = false;
+  function add(t, who){ var d = document.createElement("div"); d.className = "m " + who; d.innerHTML = t; msgs.appendChild(d); msgs.scrollTop = msgs.scrollHeight; return d; }
+  function bot(t){
+    if (reduce){ add(t, "bot"); return; }
+    var d = add("<span style='opacity:.5'>escribiendo…</span>", "bot");
+    setTimeout(function(){ d.innerHTML = t; msgs.scrollTop = msgs.scrollHeight; }, 430);
+  }
+  function suggest(){
+    chips.textContent = "";
+    [0,4,2,6,9].map(function(i){ return FAQ[i]; }).forEach(function(f){
+      var b = document.createElement("button"); b.type = "button"; b.textContent = f.q;
+      b.addEventListener("click", function(){ add(f.q, "me"); bot(f.a); });
+      chips.appendChild(b);
+    });
+  }
+  function norm(s){ return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,""); }
+  function answer(text){
+    var n = norm(text), best = null, score = 0;
+    FAQ.forEach(function(f){
+      var s = 0;
+      f.k.forEach(function(k){ if (n.indexOf(norm(k)) !== -1) s++; });
+      if (s > score){ score = s; best = f; }
+    });
+    if (best) bot(best.a);
+    else bot("Eso mejor que te lo conteste una persona, que no quiero darte media respuesta. Llámanos al <b>981 909 445</b> o escribe a <a href='mailto:administracion@okoconsultoria.net' style='color:#00706F;font-weight:500'>administracion@okoconsultoria.net</a> y te respondemos hoy mismo.");
+  }
+  function open(){
+    chat.hidden = false; fab.setAttribute("aria-expanded","true");
+    if (!started){
+      started = true;
+      bot("¡Hola! Resuelvo dudas rápidas sobre certificaciones y sobre deducciones de I+D+i. ¿Qué te interesa?");
+      suggest();
+    }
+    setTimeout(function(){ $("q").focus(); }, 60);
+  }
+  fab.addEventListener("click", function(){ if (chat.hidden) open(); else { chat.hidden = true; fab.setAttribute("aria-expanded","false"); } });
+  $("close").addEventListener("click", function(){ chat.hidden = true; fab.setAttribute("aria-expanded","false"); fab.focus(); });
+  function send(){ var v = $("q").value.trim(); if (!v) return; add(v.replace(/</g,"&lt;"), "me"); $("q").value = ""; answer(v); }
+  $("ask").addEventListener("click", send);
+  $("q").addEventListener("keydown", function(e){ if (e.key === "Enter") send(); });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape" && !chat.hidden){ chat.hidden = true; fab.setAttribute("aria-expanded","false"); } });
+})();
+</script>
+
+</body>
+</html>
