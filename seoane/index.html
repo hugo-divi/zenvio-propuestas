@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Demo de portada para Talleres Seoane, taller multimarca en el Parque Empresarial de Alvedro, Culleredo. Hecha por Zenvio, sin encargo.">
+<meta name="theme-color" content="#16191C">
+<title>Talleres Seoane</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rojo:#E2001A; --rojo-osc:#B40015;
+  --tinta:#16191C; --tinta-2:#43494F;
+  --papel:#FFFFFF; --papel-2:#F4F2EF; --papel-3:#E9E5E0;
+  --linea:#D6D1CA; --linea-fuerte:#16191C;
+  --sombra:0 1px 0 rgba(22,25,28,.06), 0 12px 32px -18px rgba(22,25,28,.35);
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --tinta:#F1EFEC; --tinta-2:#A5ABB2;
+    --papel:#13161A; --papel-2:#191D22; --papel-3:#21262C;
+    --linea:#2C3238; --linea-fuerte:#3A4249;
+    --sombra:0 1px 0 rgba(0,0,0,.4), 0 14px 36px -20px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --tinta:#F1EFEC; --tinta-2:#A5ABB2;
+  --papel:#13161A; --papel-2:#191D22; --papel-3:#21262C;
+  --linea:#2C3238; --linea-fuerte:#3A4249;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--papel); color:var(--tinta);
+  font-family:Barlow, system-ui, sans-serif; font-size:17px; line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  padding-left:env(safe-area-inset-left); padding-right:env(safe-area-inset-right);
+}
+h1,h2,h3{font-family:"Barlow Condensed", Barlow, sans-serif; font-weight:700; line-height:.98; letter-spacing:-.01em; margin:0; text-transform:uppercase}
+p{margin:0}
+a{color:inherit}
+.env{max-width:1120px; margin:0 auto; padding:0 16px}
+.mono{font-family:"Roboto Mono", ui-monospace, monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--tinta-2)}
+.supuesto{border-bottom:1px dotted var(--rojo); cursor:help}
+
+/* ---- barra superior ---- */
+.barra{background:var(--tinta); color:#F1EFEC; font-size:14px}
+.barra .env{display:flex; flex-wrap:wrap; gap:4px 22px; align-items:center; min-height:44px; padding-top:8px; padding-bottom:8px}
+.barra b{font-weight:600}
+.barra .tel{margin-left:auto; font-family:"Barlow Condensed",sans-serif; font-size:23px; font-weight:700; letter-spacing:.01em; text-decoration:none}
+.barra .tel:hover{color:#FF4D5F}
+
+/* ---- cabecera ---- */
+.cab{border-bottom:2px solid var(--linea-fuerte)}
+.cab .env{display:flex; align-items:center; gap:18px; padding-top:18px; padding-bottom:18px}
+.marca{display:flex; align-items:baseline; gap:10px; text-decoration:none}
+.marca .n{font-family:"Barlow Condensed",sans-serif; font-weight:700; font-size:30px; text-transform:uppercase; letter-spacing:-.005em}
+.marca .r{width:9px; height:9px; background:var(--rojo); border-radius:50%; transform:translateY(-6px)}
+.red{margin-left:auto; text-align:right}
+.red .mono{display:block; color:var(--tinta-2)}
+.red b{font-family:"Barlow Condensed",sans-serif; font-size:19px; letter-spacing:.02em; text-transform:uppercase}
+
+/* ---- hero: asimétrico 62/38 ---- */
+.hero{padding:clamp(40px,7vw,86px) 0 clamp(34px,5vw,64px); position:relative; overflow:hidden}
+.hero:before{content:""; position:absolute; inset:0; pointer-events:none;
+  background-image:radial-gradient(var(--linea) 1px, transparent 1px); background-size:22px 22px; opacity:.5;
+  -webkit-mask-image:linear-gradient(135deg, #000 0 22%, transparent 55%); mask-image:linear-gradient(135deg,#000 0 22%,transparent 55%)}
+.hero .env{position:relative; display:grid; grid-template-columns:1.62fr .98fr; gap:clamp(26px,4vw,58px); align-items:end}
+.hero h1{font-size:clamp(44px,8.4vw,92px)}
+.hero h1 em{font-style:normal; color:var(--rojo)}
+.sub{margin-top:20px; font-size:clamp(18px,2.1vw,22px); line-height:1.4; max-width:30ch; color:var(--tinta-2)}
+.anot{position:relative; display:inline-block; margin-top:30px; padding-left:62px}
+.anot .txt{font-family:"Roboto Mono",monospace; font-size:12.5px; line-height:1.5; color:var(--rojo); max-width:21ch; display:block}
+.flecha{position:absolute; left:2px; top:-14px; width:52px; height:60px; color:var(--rojo); opacity:.85}
+
+/* orden de trabajo */
+.orden{background:var(--papel-2); border:1.5px solid var(--linea-fuerte); box-shadow:var(--sombra)}
+.orden .top{background:var(--linea-fuerte); color:#F1EFEC; padding:9px 14px; display:flex; justify-content:space-between; align-items:center}
+.orden .top span{font-family:"Roboto Mono",monospace; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase}
+.orden .cuerpo{padding:18px 16px 16px}
+.campo{border-bottom:1px solid var(--linea); padding-bottom:9px; margin-bottom:13px}
+.campo i{font-style:normal; display:block; font-family:"Roboto Mono",monospace; font-size:10px; letter-spacing:.13em; text-transform:uppercase; color:var(--tinta-2); margin-bottom:3px}
+.campo b{font-family:"Barlow Condensed",sans-serif; font-weight:600; font-size:19px; text-transform:uppercase}
+.btn{display:block; text-align:center; text-decoration:none; background:var(--rojo); color:#fff;
+  font-family:"Barlow Condensed",sans-serif; font-weight:700; font-size:24px; text-transform:uppercase; letter-spacing:.02em;
+  padding:13px 16px; border:0; transition:background .18s ease, transform .18s ease}
+.btn:hover{background:var(--rojo-osc); transform:translateY(-1px)}
+.btn.sec{background:transparent; color:var(--tinta); border:1.5px solid var(--linea-fuerte); font-size:17px; padding:10px 16px; margin-top:8px}
+.btn.sec:hover{background:var(--papel-3); transform:none}
+
+/* ---- tira de datos ---- */
+.tira{border-top:2px solid var(--linea-fuerte); border-bottom:1px solid var(--linea); background:var(--papel-2)}
+.tira .env{display:flex; flex-wrap:wrap; gap:0}
+.dato{flex:1 1 170px; padding:22px 20px 20px; border-left:1px solid var(--linea)}
+.dato:first-child{border-left:0; padding-left:0}
+.dato .v{font-family:"Barlow Condensed",sans-serif; font-weight:700; font-size:clamp(32px,4vw,44px); line-height:1; display:block}
+.dato .v s{text-decoration:none; color:var(--rojo)}
+.dato .k{display:block; margin-top:6px; font-family:"Roboto Mono",monospace; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--tinta-2); line-height:1.5}
+
+/* ---- servicios ---- */
+.serv{padding:clamp(48px,6.5vw,86px) 0}
+.serv .cols{display:grid; grid-template-columns:.85fr 1.15fr; gap:clamp(24px,4vw,56px)}
+.serv h2{font-size:clamp(30px,4.3vw,48px); max-width:14ch}
+.serv .intro{margin-top:16px; color:var(--tinta-2); max-width:34ch}
+.lista{border-top:2px solid var(--linea-fuerte)}
+.item{display:flex; gap:16px; align-items:baseline; padding:15px 2px; border-bottom:1px solid var(--linea)}
+.item .num{font-family:"Roboto Mono",monospace; font-size:11px; color:var(--tinta-2); width:2.4em; flex:none; letter-spacing:.08em}
+.item .n{font-family:"Barlow Condensed",sans-serif; font-weight:600; font-size:clamp(21px,2.5vw,27px); text-transform:uppercase; flex:none}
+.item .d{color:var(--tinta-2); font-size:15.5px; margin-left:auto; text-align:right; max-width:30ch}
+
+/* ---- pre-ITV a sangre ---- */
+.itv{background:var(--rojo); color:#fff; padding:clamp(40px,5.5vw,70px) 0}
+.itv .env{display:grid; grid-template-columns:1.3fr 1fr; gap:clamp(20px,4vw,52px); align-items:center}
+.itv h2{font-size:clamp(30px,4.6vw,52px); max-width:18ch}
+.itv p{margin-top:14px; font-size:17.5px; opacity:.93; max-width:40ch}
+.itv .btn{background:#fff; color:var(--rojo); justify-self:start}
+.itv .btn:hover{background:#16191C; color:#fff}
+
+/* ---- pasos ---- */
+.pasos{padding:clamp(48px,6.5vw,86px) 0}
+.pasos h2{font-size:clamp(28px,4vw,42px); margin-bottom:34px}
+.linea-pasos{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(18px,3vw,38px); position:relative}
+.paso .p{font-family:"Barlow Condensed",sans-serif; font-weight:700; font-size:15px; letter-spacing:.1em; color:var(--rojo); display:block; margin-bottom:9px}
+.paso h3{font-size:clamp(20px,2.3vw,25px); margin-bottom:8px}
+.paso p{color:var(--tinta-2); font-size:15.5px}
+.paso:nth-child(2){padding-top:26px}
+.paso:nth-child(3){padding-top:52px}
+
+/* ---- dónde ---- */
+.donde{background:var(--papel-2); border-top:1px solid var(--linea); padding:clamp(44px,6vw,78px) 0}
+.donde .env{display:grid; grid-template-columns:1fr 1.05fr; gap:clamp(26px,4vw,56px); align-items:center}
+.donde h2{font-size:clamp(28px,4vw,42px)}
+.dir{margin-top:18px; font-size:17.5px; line-height:1.65}
+.dir .mono{display:block; margin-bottom:4px}
+.croquis{width:100%; height:auto; border:1.5px solid var(--linea-fuerte); background:var(--papel)}
+.horario{margin-top:22px; border-top:1px solid var(--linea)}
+.h-fila{display:flex; justify-content:space-between; padding:9px 0; border-bottom:1px solid var(--linea); font-size:16px}
+.h-fila b{font-weight:600}
+.h-fila.cerrado{color:var(--tinta-2)}
+
+/* ---- pie ---- */
+.pie{background:var(--tinta); color:#D7D3CE; padding:clamp(40px,5vw,62px) 0 0}
+.pie .env{display:grid; grid-template-columns:1.1fr .9fr; gap:34px}
+.pie h3{color:#F1EFEC; font-size:26px; margin-bottom:12px}
+.pie a{color:#F1EFEC; text-decoration:none; border-bottom:1px solid rgba(241,239,236,.3)}
+.pie .mono{color:#8E949B}
+.nota{margin-top:clamp(34px,4vw,54px); border-top:1px solid #2C3238; padding:20px 0 calc(24px + env(safe-area-inset-bottom)); font-size:14px; line-height:1.6; color:#9BA1A8}
+.nota strong{color:#F1EFEC}
+.sello{display:inline-flex; align-items:baseline; gap:7px; color:#F1EFEC; text-decoration:none; font-family:"Barlow Condensed",sans-serif; font-weight:700; font-size:17px; text-transform:uppercase; letter-spacing:.02em; border:0}
+.sello i{width:6px;height:6px;background:#8FA893;border-radius:50%; display:inline-block}
+.leyenda{display:inline-block; margin-top:10px; font-size:13.5px; color:#9BA1A8}
+.leyenda u{text-decoration:none; border-bottom:1px dotted var(--rojo)}
+
+@media (max-width:880px){
+  .hero .env,.serv .cols,.itv .env,.donde .env,.pie .env{grid-template-columns:1fr}
+  .hero .env{align-items:start}
+  .linea-pasos{grid-template-columns:1fr; gap:0}
+  .paso{padding:20px 0 !important; border-bottom:1px solid var(--linea)}
+  .item{flex-wrap:wrap; gap:6px 14px}
+  .item .d{margin-left:0; text-align:left; width:100%; padding-left:calc(2.4em + 16px)}
+  .dato{border-left:0; border-top:1px solid var(--linea); padding-left:0; flex:1 1 100%}
+  .dato:first-child{border-top:0}
+  .flecha{display:none}
+  .anot{padding-left:0; border-left:2px solid var(--rojo); padding-left:12px}
+  .barra .tel{margin-left:0; width:100%}
+  .red{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none !important; animation:none !important}}
+.rev{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s cubic-bezier(.2,.7,.3,1)}
+.rev.on{opacity:1; transform:none}
+@media (prefers-reduced-motion:reduce){.rev{opacity:1; transform:none}}
+</style>
+</head>
+<body style="margin:0">
+
+<div class="barra">
+  <div class="env">
+    <b>Parque Empresarial de Alvedro</b> · Culleredo
+    <span class="mono" style="color:#9BA1A8">L-V 8:30-13:30 · 15:30-19:30</span>
+    <a class="tel" href="tel:+34981662687">981 662 687</a>
+  </div>
+</div>
+
+<header class="cab">
+  <div class="env">
+    <a class="marca" href="#"><span class="n">Talleres Seoane</span><span class="r"></span></a>
+    <div class="red">
+      <span class="mono">Red oficial</span>
+      <b>Bosch Car Service</b>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="env">
+    <div>
+      <h1>Déjanos el coche.<br>Vete <em>en otro</em>.</h1>
+      <p class="sub">Cinco vehículos de sustitución. Nadie tiene que pedir el día libre para pasar por el taller.</p>
+      <span class="anot">
+        <svg class="flecha" viewBox="0 0 52 60" fill="none" aria-hidden="true">
+          <path d="M3 4c6 14 3 28 10 38 6 9 18 13 31 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="0.1 0" style="stroke-dashoffset:0"/>
+          <path d="M38 48c2.3 2.2 4.4 4.4 6 6.2-2.8.4-5.6 1-8.2 1.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="txt">Esto ya lo tenéis. Simplemente no lo cuenta nadie.</span>
+      </span>
+    </div>
+
+    <div class="orden rev">
+      <div class="top"><span>Orden de trabajo</span><span>Nº ____</span></div>
+      <div class="cuerpo">
+        <div class="campo"><i>Vehículo</i><b>Multimarca</b></div>
+        <div class="campo"><i>Entrada</i><b>Hoy, sin cita previa</b></div>
+        <div class="campo" style="border-bottom:0"><i>Mientras tanto</i><b>Coche de sustitución</b></div>
+        <a class="btn" href="tel:+34981662687">Llamar al taller</a>
+        <a class="btn sec" href="mailto:gerencia@talleresseoane.es">Escribir un correo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="tira">
+  <div class="env">
+    <div class="dato"><span class="v">4.500<s> m²</s></span><span class="k">De terreno</span></div>
+    <div class="dato"><span class="v">1.300<s> m²</s></span><span class="k">Cubiertos</span></div>
+    <div class="dato"><span class="v">5</span><span class="k">Vehículos de sustitución</span></div>
+    <div class="dato"><span class="v">4,4<s> / 5</s></span><span class="k">171 reseñas en Google</span></div>
+  </div>
+</div>
+
+<section class="serv">
+  <div class="env cols">
+    <div>
+      <h2>Taller multimarca</h2>
+      <p class="intro">Entra cualquier coche y sale arreglado en el mismo sitio. No hay que repartir el trabajo entre tres talleres.</p>
+    </div>
+    <div class="lista">
+      <div class="item"><span class="num">01</span><span class="n">Mecánica general</span><span class="d">Revisiones, distribución, frenos, embrague</span></div>
+      <div class="item"><span class="num">02</span><span class="n">Diagnosis</span><span class="d">Equipo Bosch: se lee la avería antes de abrir nada</span></div>
+      <div class="item"><span class="num">03</span><span class="n">Electricidad</span><span class="d">Lo que ningún taller pequeño quiere tocar</span></div>
+      <div class="item"><span class="num">04</span><span class="n">Chapa y pintura</span><span class="d">Cabina propia, en las mismas instalaciones</span></div>
+      <div class="item"><span class="num">05</span><span class="n">Neumáticos</span><span class="d">Montaje, equilibrado y alineación</span></div>
+      <div class="item"><span class="num">06</span><span class="n">Pre-ITV</span><span class="d">Se revisa aquí lo que allí te van a mirar</span></div>
+      <div class="item"><span class="num">07</span><span class="n">Grúa</span><span class="d">Si no arranca, no hace falta que lo traigas tú</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="itv">
+  <div class="env">
+    <div>
+      <h2>A la ITV no se va a ver qué pasa</h2>
+      <p>Se va sabiendo el resultado. Te revisamos aquí los mismos puntos que te van a mirar allí, y si algo falla se arregla antes, no después de perder la mañana y la tasa.</p>
+    </div>
+    <a class="btn" href="tel:+34981662687">Pedir una pre-ITV</a>
+  </div>
+</section>
+
+<section class="pasos">
+  <div class="env">
+    <h2>Cómo va</h2>
+    <div class="linea-pasos">
+      <div class="paso rev"><span class="p">PASO 01</span><h3>Llamas</h3><p>Nos cuentas qué le pasa y te decimos cuándo lo puedes traer. Si corre prisa, hoy mismo.</p></div>
+      <div class="paso rev"><span class="p">PASO 02</span><h3>Traes el coche y te llevas otro</h3><p>Si hay vehículo de sustitución libre, sales del taller conduciendo. <span class="supuesto" title="Suposición de Zenvio: habría que confirmar en qué casos se da el coche de sustitución y si tiene coste.">Sin coste añadido.</span></p></div>
+      <div class="paso rev"><span class="p">PASO 03</span><h3>Te llamamos antes de tocar nada</h3><p><span class="supuesto" title="Suposición de Zenvio: habría que confirmar si el taller avisa siempre antes de reparar.">Primero el presupuesto, y lo aprueba el cliente.</span> Nadie se encuentra una factura que no esperaba.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="donde">
+  <div class="env">
+    <div>
+      <h2>Al lado del aeropuerto</h2>
+      <p class="dir">
+        <span class="mono">Dirección</span>
+        Calle GA, parcela K2<br>
+        Parque Empresarial de Alvedro<br>
+        15180 Culleredo, A Coruña
+      </p>
+      <div class="horario">
+        <div class="h-fila"><b>Lunes a viernes</b><span>8:30 - 13:30 · 15:30 - 19:30</span></div>
+        <div class="h-fila cerrado"><b>Sábado y domingo</b><span>Cerrado</span></div>
+      </div>
+    </div>
+    <svg class="croquis" viewBox="0 0 420 260" role="img" aria-label="Croquis del Parque Empresarial de Alvedro con la situación del taller junto al aeropuerto de A Coruña">
+      <rect width="420" height="260" fill="none"/>
+      <path d="M-10 196 C70 182 150 176 240 170 C310 165 370 158 430 148" stroke="var(--linea)" stroke-width="16" fill="none" stroke-linecap="round"/>
+      <path d="M-10 196 C70 182 150 176 240 170 C310 165 370 158 430 148" stroke="var(--papel)" stroke-width="2" stroke-dasharray="9 11" fill="none"/>
+      <text x="22" y="224" font-family="Roboto Mono, monospace" font-size="10.5" letter-spacing="1.4" fill="var(--tinta-2)">AC-415</text>
+      <path d="M284 232 l34 -22 l34 22" stroke="var(--linea)" stroke-width="1.6" fill="none"/>
+      <text x="268" y="250" font-family="Roboto Mono, monospace" font-size="10.5" letter-spacing="1.4" fill="var(--tinta-2)">AEROPUERTO</text>
+      <rect x="84" y="56" width="212" height="82" fill="none" stroke="var(--linea-fuerte)" stroke-width="1.6"/>
+      <text x="94" y="48" font-family="Roboto Mono, monospace" font-size="10.5" letter-spacing="1.4" fill="var(--tinta-2)">P. E. DE ALVEDRO</text>
+      <rect x="196" y="86" width="56" height="34" fill="var(--rojo)"/>
+      <text x="206" y="108" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="17" fill="#fff">K2</text>
+      <path d="M252 103 l44 0" stroke="var(--rojo)" stroke-width="1.6" stroke-dasharray="4 4"/>
+      <text x="302" y="100" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="16" fill="var(--tinta)">AQUÍ</text>
+      <text x="302" y="116" font-family="Roboto Mono, monospace" font-size="9.5" letter-spacing="1.2" fill="var(--tinta-2)">CALLE GA</text>
+    </svg>
+  </div>
+</section>
+
+<footer class="pie">
+  <div class="env">
+    <div>
+      <h3>Talleres Seoane</h3>
+      <p>Calle GA, parcela K2 · Parque Empresarial de Alvedro<br>15180 Culleredo, A Coruña</p>
+      <p style="margin-top:12px"><a href="tel:+34981662687">981 662 687</a> · <a href="mailto:gerencia@talleresseoane.es">gerencia@talleresseoane.es</a></p>
+    </div>
+    <div>
+      <span class="mono">Red</span>
+      <p style="margin-bottom:12px">Bosch Car Service</p>
+      <span class="mono">Horario</span>
+      <p>Lunes a viernes, 8:30-13:30 y 15:30-19:30</p>
+    </div>
+  </div>
+  <div class="env">
+    <div class="nota">
+      <p><strong>Esto es una demo, y solo es la portada.</strong> La ha hecho <a class="sello" href="#"><i></i>Zenvio</a> sin que nadie la encargue, para enseñar cómo podría quedar la web de Talleres Seoane. Faltarían las páginas de servicios, la de contacto con formulario y el aviso legal.</p>
+      <p style="margin-top:10px">Los textos y las cifras salen de lo que el propio taller publica en <em>talleresseoane.es</em> y en su ficha de Páxinas Galegas, y la valoración, de su ficha de Google. El sistema de color es el de Bosch Car Service, por ser su red; en la web definitiva habría que usar los valores exactos de su manual de marca.</p>
+      <span class="leyenda">Lo marcado con <u>línea de puntos</u> es una suposición de Zenvio y habría que confirmarlo con el taller antes de publicarlo.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var io;
+  try{
+    io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); } });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:.08});
+    document.querySelectorAll('.rev').forEach(function(el,i){ el.style.transitionDelay=(i%3)*70+'ms'; io.observe(el); });
+  }catch(err){
+    document.querySelectorAll('.rev').forEach(function(el){ el.classList.add('on'); });
+  }
+})();
+</script>
+
+</body>
+</html>
