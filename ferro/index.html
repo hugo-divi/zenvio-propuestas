@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Demo de portada para Talleres Ferro, Culleredo. Hecha por Zenvio, sin encargo.">
+<meta name="theme-color" content="#13212B">
+<title>Talleres Ferro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600;700;800;900&family=Red+Hat+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noche:#13212B; --noche-2:#1B2E3B; --naranja:#E2601F; --naranja-2:#C24E14;
+  --tinta:#16212A; --tinta-2:#55626C; --fondo:#FFFFFF; --fondo-2:#F3F4F2; --linea:#E1E3E0;
+  --sombra:0 1px 2px rgba(19,33,43,.06), 0 10px 28px -14px rgba(19,33,43,.28);
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --tinta:#EEF1F2; --tinta-2:#A6B1B8; --fondo:#0F171D; --fondo-2:#152029; --linea:#24323C;
+    --noche:#0A1218; --noche-2:#13212B;
+  }
+}
+:root[data-theme="dark"]{
+  --tinta:#EEF1F2; --tinta-2:#A6B1B8; --fondo:#0F171D; --fondo-2:#152029; --linea:#24323C;
+  --noche:#0A1218; --noche-2:#13212B;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0; background:var(--fondo); color:var(--tinta);
+  font-family:"Red Hat Text", system-ui, sans-serif; font-size:17px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  padding-left:env(safe-area-inset-left); padding-right:env(safe-area-inset-right)}
+h1,h2,h3,.disp{font-family:"Red Hat Display", system-ui, sans-serif; margin:0; letter-spacing:-.015em; line-height:1.08}
+p{margin:0}
+a{color:inherit}
+.env{max-width:1140px; margin:0 auto; padding:0 16px}
+.ante{display:inline-block; font-family:"Red Hat Display",sans-serif; font-weight:800; font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--naranja); margin-bottom:10px}
+.supuesto{border-bottom:1.5px dotted var(--naranja); cursor:help}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:9px; text-decoration:none; border:0; cursor:pointer;
+  font-family:"Red Hat Display",sans-serif; font-weight:800; font-size:16px; padding:14px 22px; border-radius:6px;
+  background:var(--naranja); color:#fff; transition:background .16s ease, transform .16s ease}
+.btn:hover{background:var(--naranja-2); transform:translateY(-1px)}
+.btn.claro{background:#fff; color:var(--noche)}
+.btn.claro:hover{background:#F3F4F2}
+.btn.linea{background:transparent; color:inherit; box-shadow:inset 0 0 0 2px currentColor}
+.btn.linea:hover{background:rgba(255,255,255,.08); transform:none}
+.btn svg{width:18px; height:18px; flex:none}
+
+/* barra superior */
+.sup{background:var(--noche); color:#C9D3D9; font-size:14px}
+.sup .env{display:flex; justify-content:space-between; align-items:center; gap:10px; min-height:38px; flex-wrap:wrap}
+.sup b{color:#fff; font-weight:600}
+.sup .dot{display:inline-block; width:7px; height:7px; border-radius:50%; background:#5FD08A; margin-right:7px; vertical-align:1px}
+
+/* cabecera */
+.cab{position:sticky; top:0; z-index:20; background:color-mix(in srgb, var(--fondo) 94%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--linea)}
+.cab .env{display:flex; align-items:center; gap:22px; min-height:72px}
+.logo{display:flex; align-items:center; gap:11px; text-decoration:none}
+.logo .m{width:40px; height:40px; border-radius:7px; background:var(--naranja); color:#fff; display:grid; place-items:center; font-family:"Red Hat Display",sans-serif; font-weight:900; font-size:22px}
+.logo b{font-family:"Red Hat Display",sans-serif; font-weight:900; font-size:21px; line-height:1; display:block}
+.logo small{display:block; font-size:12.5px; color:var(--tinta-2); margin-top:3px}
+.cab nav{display:flex; gap:22px; margin-left:auto; font-weight:600; font-size:15.5px}
+.cab nav a{text-decoration:none; color:var(--tinta-2)}
+.cab nav a:hover{color:var(--tinta)}
+.cab .tel{font-family:"Red Hat Display",sans-serif; font-weight:800; font-size:18px; text-decoration:none; white-space:nowrap}
+.cab .btn{padding:11px 18px; font-size:15px}
+
+/* portada */
+.portada{background:var(--noche); color:#fff; position:relative; overflow:hidden}
+.portada:before{content:""; position:absolute; inset:0; pointer-events:none; opacity:.07;
+  background:repeating-linear-gradient(-45deg, #fff 0 2px, transparent 2px 26px)}
+.portada .env{position:relative; display:grid; grid-template-columns:1.15fr .85fr; gap:clamp(28px,5vw,64px); align-items:center; padding-top:clamp(44px,6vw,80px); padding-bottom:clamp(48px,6vw,84px)}
+.etiq{display:inline-flex; align-items:center; gap:8px; background:rgba(226,96,31,.16); color:#FFB48C; border:1px solid rgba(226,96,31,.4); font-weight:600; font-size:14px; padding:6px 12px; border-radius:99px}
+.portada h1{font-size:clamp(38px,5.6vw,64px); font-weight:900; margin-top:18px}
+.portada h1 .sub{position:relative; color:#FFB48C; white-space:nowrap}
+.portada h1 .sub svg{position:absolute; left:-2%; bottom:-.16em; width:104%; height:.32em; overflow:visible}
+.portada h1 .sub path{fill:none; stroke:var(--naranja); stroke-width:5; stroke-linecap:round; stroke-dasharray:420; stroke-dashoffset:420; animation:raya .9s cubic-bezier(.6,.1,.3,1) .5s forwards}
+@keyframes raya{to{stroke-dashoffset:0}}
+.portada .lead{margin-top:18px; font-size:clamp(17.5px,1.8vw,20px); color:#C9D3D9; max-width:44ch}
+.portada .accs{display:flex; flex-wrap:wrap; gap:12px; margin-top:28px}
+.ventajas{display:flex; flex-wrap:wrap; gap:8px 22px; margin-top:28px; font-size:15px; color:#C9D3D9}
+.ventajas span{display:inline-flex; align-items:center; gap:7px}
+.ventajas svg{width:17px; height:17px; color:#5FD08A}
+
+/* formulario */
+.form{background:var(--fondo); color:var(--tinta); border-radius:10px; padding:24px 22px 22px; box-shadow:0 24px 60px -24px rgba(0,0,0,.6)}
+.form h2{font-size:23px; font-weight:800}
+.form .ayuda{font-size:14.5px; color:var(--tinta-2); margin-top:4px}
+.form label{display:block; font-size:13.5px; font-weight:600; margin:14px 0 5px}
+.form input,.form textarea{width:100%; font:inherit; font-size:16px; color:var(--tinta); background:var(--fondo-2); border:1.5px solid var(--linea); border-radius:6px; padding:11px 12px}
+.form input:focus,.form textarea:focus{outline:none; border-color:var(--naranja); background:var(--fondo)}
+.form textarea{min-height:76px; resize:vertical}
+.form .chk{display:flex; gap:10px; align-items:flex-start; margin-top:14px; font-size:15px; font-weight:500}
+.form .chk input{width:18px; height:18px; margin-top:3px; accent-color:var(--naranja)}
+.form .btn{width:100%; margin-top:18px}
+.form .pie-f{font-size:13px; color:var(--tinta-2); margin-top:10px; text-align:center}
+
+/* bloques */
+.blq{padding:clamp(54px,7vw,92px) 0}
+.blq.gris{background:var(--fondo-2)}
+.tit{max-width:640px; margin-bottom:clamp(28px,4vw,44px)}
+.tit h2{font-size:clamp(30px,3.8vw,42px); font-weight:900}
+.tit p{margin-top:12px; color:var(--tinta-2); font-size:18px}
+
+/* recogida */
+.pasos{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; counter-reset:p}
+.paso{background:var(--fondo); border:1px solid var(--linea); border-radius:10px; padding:22px 20px 20px; position:relative}
+.paso .n{width:36px; height:36px; border-radius:50%; background:var(--noche); color:#fff; display:grid; place-items:center; font-family:"Red Hat Display",sans-serif; font-weight:900; font-size:16px}
+.paso h3{font-size:19px; font-weight:800; margin:14px 0 6px}
+.paso p{font-size:15.5px; color:var(--tinta-2)}
+.paso + .paso:before{content:""; position:absolute; left:-17px; top:39px; width:18px; height:2px; background:var(--linea)}
+.quien{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:16px}
+.qc{border-left:3px solid var(--naranja); padding:4px 0 4px 16px}
+.qc b{display:block; font-family:"Red Hat Display",sans-serif; font-weight:800; font-size:18px; margin-bottom:4px}
+.qc p{font-size:15.5px; color:var(--tinta-2)}
+
+/* servicios */
+.serv{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+.sv{border:1px solid var(--linea); border-radius:10px; padding:22px 20px; background:var(--fondo); transition:border-color .16s ease, box-shadow .16s ease}
+.sv:hover{border-color:color-mix(in srgb, var(--naranja) 50%, var(--linea)); box-shadow:var(--sombra)}
+.sv svg{width:34px; height:34px; color:var(--naranja)}
+.sv h3{font-size:19px; font-weight:800; margin:12px 0 6px}
+.sv p{font-size:15.5px; color:var(--tinta-2)}
+.aviso-ej{margin-top:18px; font-size:14px; color:var(--tinta-2)}
+.aviso-ej u{text-decoration:none; border-bottom:1.5px dotted var(--naranja)}
+
+/* reseñas y zona */
+.dos{display:grid; grid-template-columns:1fr 1fr; gap:clamp(24px,4vw,48px); align-items:start}
+.resenas{border:2px dashed var(--linea); border-radius:10px; padding:26px 22px; text-align:center}
+.estrellas{font-size:26px; letter-spacing:4px; color:#F2B01E}
+.resenas b{display:block; font-family:"Red Hat Display",sans-serif; font-weight:800; font-size:19px; margin-top:8px}
+.resenas p{font-size:15px; color:var(--tinta-2); margin-top:6px; max-width:36ch; margin-left:auto; margin-right:auto}
+.zona .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px}
+.zona .chips span{background:var(--fondo); border:1px solid var(--linea); border-radius:99px; padding:7px 14px; font-weight:600; font-size:15px}
+.zona .chips span.yo{background:var(--noche); color:#fff; border-color:var(--noche)}
+
+/* preguntas */
+.faq{max-width:780px}
+details{border-bottom:1px solid var(--linea)}
+details:first-of-type{border-top:1px solid var(--linea)}
+summary{list-style:none; cursor:pointer; display:flex; justify-content:space-between; gap:16px; padding:18px 0; font-family:"Red Hat Display",sans-serif; font-weight:800; font-size:18.5px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+"; font-size:24px; line-height:1; color:var(--naranja); transition:transform .2s ease}
+details[open] summary:after{transform:rotate(45deg)}
+details p{padding:0 0 18px; color:var(--tinta-2); max-width:62ch}
+
+/* cierre */
+.cierre{background:var(--naranja); color:#fff; padding:clamp(40px,5vw,60px) 0}
+.cierre .env{display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap}
+.cierre h2{font-size:clamp(28px,3.6vw,40px); font-weight:900}
+.cierre p{margin-top:6px; opacity:.92; font-size:18px}
+.cierre .accs{display:flex; gap:12px; flex-wrap:wrap}
+.cierre .btn.claro{color:var(--naranja-2)}
+
+/* dónde */
+.donde{display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(24px,4vw,48px)}
+.hueco{border:2px dashed var(--linea); border-radius:10px; min-height:280px; display:flex; align-items:center; justify-content:center; text-align:center; padding:24px; color:var(--tinta-2); font-size:15px;
+  background:repeating-linear-gradient(135deg, transparent 0 12px, color-mix(in srgb, var(--linea) 55%, transparent) 12px 13px)}
+.hueco span{background:var(--fondo); padding:10px 14px; border-radius:6px; max-width:32ch}
+.datos h3{font-size:24px; font-weight:900}
+.datos .dir{margin-top:6px; font-size:18px}
+.tabla{margin-top:20px; border-top:1px solid var(--linea)}
+.fila{display:flex; justify-content:space-between; gap:12px; padding:11px 0; border-bottom:1px solid var(--linea); font-size:16px}
+.fila b{font-weight:600}
+.fila.no{color:var(--tinta-2)}
+.cont{margin-top:20px; display:grid; gap:10px}
+.cont a{display:flex; align-items:center; gap:12px; text-decoration:none; font-weight:600; font-size:17px}
+.cont a svg{width:20px; height:20px; color:var(--naranja); flex:none}
+.cont a:hover{color:var(--naranja)}
+
+/* pie */
+.pie{background:var(--noche); color:#AEBAC2; padding:34px 0 calc(34px + env(safe-area-inset-bottom)); font-size:14.5px; line-height:1.65}
+.pie .env{display:grid; grid-template-columns:1fr 1.7fr; gap:28px}
+.pie b{color:#fff}
+.pie .z{display:inline-flex; align-items:baseline; gap:6px; font-family:"Red Hat Display",sans-serif; font-weight:800; color:#fff; text-decoration:none}
+.pie .z i{width:6px; height:6px; border-radius:50%; background:#8FA893; display:inline-block}
+.pie u{text-decoration:none; border-bottom:1.5px dotted #FFB48C}
+
+/* barra fija móvil */
+.fija{display:none}
+
+.rev{opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s cubic-bezier(.2,.7,.3,1)}
+.rev.on{opacity:1; transform:none}
+
+@media (max-width:980px){
+  .cab nav{display:none}
+  .pasos{grid-template-columns:1fr 1fr}
+  .paso + .paso:before{display:none}
+  .serv{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .portada .env,.dos,.donde,.pie .env{grid-template-columns:1fr}
+  .cab .tel,.cab .btn{display:none}
+  .pasos,.serv,.quien{grid-template-columns:1fr}
+  .portada h1 .sub{white-space:normal}
+  .fija{display:grid; grid-template-columns:1fr 1fr; gap:8px; position:fixed; left:0; right:0; bottom:0; z-index:30;
+    padding:10px 12px calc(10px + env(safe-area-inset-bottom)); background:var(--fondo); border-top:1px solid var(--linea); box-shadow:0 -8px 24px -12px rgba(0,0,0,.25)}
+  .fija .btn{padding:13px 10px; font-size:15.5px}
+  .pie{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important; transition:none !important; scroll-behavior:auto !important}
+  .portada h1 .sub path{stroke-dashoffset:0}
+  .rev{opacity:1; transform:none}
+}
+</style>
+</head>
+<body style="margin:0">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
+  <symbol id="i-ok" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></g></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+  <symbol id="i-llave" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M19.5 5.5a6 6 0 0 0-5.7 7.9L5.5 21.7a2.6 2.6 0 0 0 3.7 3.7l8.3-8.3a6 6 0 0 0 7.9-5.7l-3.6 3.6-3.4-.7-.7-3.4z"/></symbol>
+  <symbol id="i-revision" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="5" width="18" height="23" rx="2"/><path d="M12 5V3h8v2M11.5 13l2.5 2.5 5-5M11.5 21h9"/></g></symbol>
+  <symbol id="i-freno" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="11"/><circle cx="16" cy="16" r="3.5"/><path d="M8 9.5a10 10 0 0 0-2 5"/></g></symbol>
+  <symbol id="i-rueda" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="16" cy="16" r="12"/><circle cx="16" cy="16" r="5"/><path d="M16 4v7M16 21v7M4 16h7M21 16h7"/></g></symbol>
+  <symbol id="i-bateria" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="24" height="16" rx="2"/><path d="M9 9V6.5M23 9V6.5M9 17h4M19 17h4M21 15v4"/></g></symbol>
+  <symbol id="i-itv" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4l10 4v7c0 6.5-4.3 11-10 13-5.7-2-10-6.5-10-13V8z"/><path d="M11.5 16l3 3 6-6"/></g></symbol>
+</svg>
+
+<div class="sup">
+  <div class="env">
+    <span><span class="dot"></span>Lunes a viernes, <b>9:00-13:30 y 15:30-19:00</b></span>
+    <span>Rúa Peñaloureira, 11 · Culleredo</span>
+  </div>
+</div>
+
+<header class="cab">
+  <div class="env">
+    <a class="logo" href="#"><span class="m">F</span><span><b>Talleres Ferro</b><small>Taller mecánico en Culleredo</small></span></a>
+    <nav><a href="#recogida">Recogida a domicilio</a><a href="#servicios">Servicios</a><a href="#preguntas">Preguntas</a><a href="#donde">Dónde estamos</a></nav>
+    <a class="tel" href="tel:+34981661890">981 661 890</a>
+    <a class="btn" href="#cita">Pedir cita</a>
+  </div>
+</header>
+
+<section class="portada">
+  <div class="env">
+    <div>
+      <span class="etiq">Recogida y entrega del coche a domicilio</span>
+      <h1>Tu coche al taller <span class="sub">sin que te muevas<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 13 C 70 5, 160 4, 296 10"/></svg></span></h1>
+      <p class="lead">Pasamos a recogerlo por tu casa o por el trabajo, lo reparamos en nuestro taller de Culleredo y te lo devolvemos donde nos digas.</p>
+      <div class="accs">
+        <a class="btn" href="tel:+34981661890"><svg><use href="#i-tel"/></svg>Llamar al 981 661 890</a>
+        <a class="btn linea" href="#cita">Pedir la recogida</a>
+      </div>
+      <div class="ventajas">
+        <span><svg><use href="#i-ok"/></svg><span class="supuesto" title="Suposición de Zenvio: confirmar con el taller.">Lo recoge alguien del taller</span></span>
+        <span><svg><use href="#i-ok"/></svg><span class="supuesto" title="Suposición de Zenvio: confirmar con el taller.">Presupuesto antes de tocar nada</span></span>
+        <span><svg><use href="#i-ok"/></svg>Taller propio en Culleredo</span>
+      </div>
+    </div>
+
+    <form class="form" id="cita" onsubmit="return enviar(event)">
+      <h2>Pide la recogida</h2>
+      <p class="ayuda">Déjanos tus datos y te llamamos para cerrar el día y la hora.</p>
+      <label for="f-nom">Nombre</label><input id="f-nom" name="nombre" autocomplete="name" required>
+      <label for="f-tel">Teléfono</label><input id="f-tel" name="telefono" type="tel" autocomplete="tel" inputmode="tel" required>
+      <label for="f-coche">Coche</label><input id="f-coche" name="coche" placeholder="Marca y modelo">
+      <label for="f-que">¿Qué le pasa?</label><textarea id="f-que" name="que" placeholder="Revisión, un ruido al frenar, no arranca..."></textarea>
+      <label class="chk"><input type="checkbox" name="recogida" checked> Quiero que paséis a recogerlo</label>
+      <button class="btn" type="submit">Enviar</button>
+      <p class="pie-f">O llama directamente: <a href="tel:+34981661890">981 661 890</a></p>
+    </form>
+  </div>
+</section>
+
+<section class="blq" id="recogida">
+  <div class="env">
+    <div class="tit">
+      <span class="ante">Recogida a domicilio</span>
+      <h2>Así funciona</h2>
+      <p>Los talleres abren cuando tú trabajas. Por eso, si no puedes acercarte, vamos nosotros.</p>
+    </div>
+    <div class="pasos">
+      <div class="paso rev"><span class="n">1</span><h3>Nos llamas</h3><p>Nos cuentas qué le pasa al coche y dónde está. Quedamos el día y la hora.</p></div>
+      <div class="paso rev"><span class="n">2</span><h3>Pasamos a por él</h3><p>A tu casa o al trabajo. <span class="supuesto" title="Suposición de Zenvio: es lo que hacen los talleres que ofrecen este servicio; confirmar si Ferro lo hace.">Al recogerlo, apuntamos los kilómetros y cómo está el coche.</span></p></div>
+      <div class="paso rev"><span class="n">3</span><h3>Te llamamos con el precio</h3><p><span class="supuesto" title="Suposición de Zenvio: confirmar con el taller.">No se toca nada hasta que nos digas que sí.</span> Si no te cuadra, te lo devolvemos como estaba.</p></div>
+      <div class="paso rev"><span class="n">4</span><h3>Te lo devolvemos</h3><p>Arreglado y donde nos digas: en casa, en el trabajo o en el taller.</p></div>
+    </div>
+    <div class="quien">
+      <div class="qc rev"><b>Si trabajas de 9 a 7</b><p>No tienes que pedir una mañana para dejarlo y otra para ir a buscarlo.</p></div>
+      <div class="qc rev"><b>Si tu furgoneta es tu trabajo</b><p>La recogemos a primera hora y te la devolvemos cuanto antes. Un día parado es un día sin facturar.</p></div>
+      <div class="qc rev"><b>Si no tienes quién te lleve</b><p>Por edad, por salud o porque en casa solo hay un coche. Sin pedir favores a nadie.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blq gris" id="servicios">
+  <div class="env">
+    <div class="tit">
+      <span class="ante">Servicios</span>
+      <h2>Lo que hacemos en el taller</h2>
+      <p>Mecánica para el coche de todos los días, de cualquier marca.</p>
+    </div>
+    <div class="serv">
+      <div class="sv rev"><svg><use href="#i-revision"/></svg><h3>Revisión y mantenimiento</h3><p>Aceite, filtros y todo lo que pide el libro de mantenimiento.</p></div>
+      <div class="sv rev"><svg><use href="#i-llave"/></svg><h3>Mecánica y averías</h3><p>Motor, embrague, distribución, suspensión. Si hace un ruido raro, lo miramos.</p></div>
+      <div class="sv rev"><svg><use href="#i-freno"/></svg><h3>Frenos</h3><p>Pastillas, discos y líquido. Si chirría o vibra al frenar, no esperes.</p></div>
+      <div class="sv rev"><svg><use href="#i-rueda"/></svg><h3>Neumáticos</h3><p>Cambio, equilibrado y pinchazos.</p></div>
+      <div class="sv rev"><svg><use href="#i-bateria"/></svg><h3>Batería y electricidad</h3><p>Si no arranca o se encienden testigos en el cuadro.</p></div>
+      <div class="sv rev"><svg><use href="#i-itv"/></svg><h3>Pre-ITV</h3><p>Lo revisamos antes de ir para que pase a la primera.</p></div>
+    </div>
+    <p class="aviso-ej"><u>Lista de ejemplo</u>: los servicios hay que confirmarlos con el taller.</p>
+  </div>
+</section>
+
+<section class="blq">
+  <div class="env dos">
+    <div class="resenas rev">
+      <div class="estrellas" aria-hidden="true">★★★★★</div>
+      <b>Aquí van vuestras reseñas de Google</b>
+      <p>Las tres o cuatro mejores, con nombre y fecha, y la nota media. Es lo que más mira alguien antes de dejarle el coche a un taller que no conoce.</p>
+    </div>
+    <div class="zona rev">
+      <span class="ante">Dónde recogemos</span>
+      <h2 style="font-size:clamp(26px,3vw,34px); font-weight:900">Culleredo y alrededores</h2>
+      <p style="margin-top:10px; color:var(--tinta-2)"><span class="supuesto" title="Suposición de Zenvio: la zona exacta de recogida hay que confirmarla con el taller.">Si estás fuera de esta zona, llámanos y lo miramos.</span></p>
+      <div class="chips">
+        <span class="yo">Culleredo</span><span>O Burgo</span><span>Vilaboa</span><span>Rutis</span><span>Alvedro</span><span>Almeiras</span><span>Cambre</span><span>A Coruña</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blq gris" id="preguntas">
+  <div class="env">
+    <div class="tit">
+      <span class="ante">Preguntas</span>
+      <h2>Lo que nos suele preguntar la gente</h2>
+    </div>
+    <div class="faq">
+      <details open><summary>¿Cuánto cuesta la recogida?</summary><p>Depende de dónde haya que ir. Te lo decimos por teléfono antes de salir, para que no haya sorpresas.</p></details>
+      <details><summary>¿Quién viene a por el coche?</summary><p>Alguien del propio taller, no un mensajero. Si quieres, le cuentas a él lo que le pasa al coche.</p></details>
+      <details><summary>¿Cuándo lo tengo de vuelta?</summary><p>Hasta verlo no te lo podemos decir, y preferimos no inventarnos un plazo. En cuanto sabemos qué tiene, te damos un día.</p></details>
+      <details><summary>¿Arregláis cualquier marca?</summary><p>Sí, somos un taller multimarca. Si es algo que no hacemos nosotros, te lo decimos y te recomendamos a quién llevarlo.</p></details>
+    </div>
+    <p class="aviso-ej"><u>Respuestas de ejemplo</u>: hay que repasarlas con el taller.</p>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="env">
+    <div>
+      <h2>¿Pasamos a por tu coche?</h2>
+      <p>Llámanos y quedamos el día.</p>
+    </div>
+    <div class="accs">
+      <a class="btn claro" href="tel:+34981661890"><svg><use href="#i-tel"/></svg>981 661 890</a>
+      <a class="btn linea" href="tel:+34690059407">Móvil 690 059 407</a>
+    </div>
+  </div>
+</section>
+
+<section class="blq" id="donde">
+  <div class="env donde">
+    <div class="hueco rev"><span>Aquí va una foto de la entrada del taller, para que quien venga lo reconozca desde la calle.</span></div>
+    <div class="datos">
+      <span class="ante">Si prefieres traerlo tú</span>
+      <h3>Talleres Ferro</h3>
+      <p class="dir">Rúa Peñaloureira, 11, bajo<br>15174 Culleredo, A Coruña</p>
+      <div class="tabla">
+        <div class="fila"><b>Lunes a viernes</b><span>9:00-13:30 y 15:30-19:00</span></div>
+        <div class="fila no"><b>Sábado y domingo</b><span>Cerrado</span></div>
+      </div>
+      <div class="cont">
+        <a href="tel:+34981661890"><svg><use href="#i-tel"/></svg>981 661 890</a>
+        <a href="tel:+34690059407"><svg><use href="#i-tel"/></svg>690 059 407</a>
+        <a href="mailto:cesarferrot@gmail.com"><svg><use href="#i-mail"/></svg>cesarferrot@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="pie">
+  <div class="env">
+    <div><b>Talleres Ferro</b><br>Rúa Peñaloureira, 11 · Culleredo<br>981 661 890 · 690 059 407</div>
+    <div>
+      <p><b>Esto es una demo, y solo es la portada.</b> La ha hecho <a class="z" href="#"><i></i>Zenvio</a> sin que nadie la encargue, para enseñar cómo podría ser la web de Talleres Ferro. Faltarían las páginas de cada servicio, el aviso legal, las fotos del taller y las reseñas reales.</p>
+      <p style="margin-top:10px">La dirección, los teléfonos, el horario y la recogida y entrega a domicilio salen de la ficha del taller en el directorio de comercio del Concello de Culleredo. El resto lo ha escrito Zenvio como propuesta: <u>lo marcado con línea de puntos</u>, los servicios, las respuestas y la zona de recogida hay que confirmarlos con el taller. El formulario prepara un correo al taller; en la web de verdad llegaría directo.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="fija">
+  <a class="btn" href="tel:+34981661890"><svg><use href="#i-tel"/></svg>Llamar</a>
+  <a class="btn linea" style="color:var(--tinta)" href="#cita">Pedir recogida</a>
+</div>
+
+<script>
+function enviar(e){
+  e.preventDefault();
+  var f=e.target, v=function(n){return (f.elements[n].value||'').trim();};
+  var cuerpo='Nombre: '+v('nombre')+'\nTeléfono: '+v('telefono')+'\nCoche: '+v('coche')+'\n¿Qué le pasa?: '+v('que')+'\nRecogida a domicilio: '+(f.elements.recogida.checked?'Sí':'No');
+  location.href='mailto:cesarferrot@gmail.com?subject='+encodeURIComponent('Cita desde la web')+'&body='+encodeURIComponent(cuerpo);
+  return false;
+}
+(function(){
+  try{
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('on'); io.unobserve(x.target); } });
+    },{threshold:.12});
+    document.querySelectorAll('.rev').forEach(function(el,i){ el.style.transitionDelay=(i%4)*60+'ms'; io.observe(el); });
+  }catch(err){
+    document.querySelectorAll('.rev').forEach(function(el){ el.classList.add('on'); });
+  }
+})();
+</script>
+
+</body>
+</html>
